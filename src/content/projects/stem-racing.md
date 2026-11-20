@@ -64,27 +64,7 @@ The targets were quantifiable from the start: drag coefficient (C_d), frontal ar
 
 ## Process
 
-The development followed four stages: research and constraints, then a baseline concept, then CAD development, then optimisation. Every stage fed back into the next.
-
-### Research: where the energy goes
-
-Aerodynamic drag is the dominant force resisting the car:
-
-**F_d = ½ ρ v² C_d A**, and the power it costs is **P_d = ½ ρ v³ C_d A**
-
-Because drag grows with the square of speed (and its power cost with the cube), small reductions in C_d or frontal area A pay off far more than adding downforce. Lift still mattered: too much positive lift unloads the wheels and bearings and hurts stability.
-
-Mechanical losses act the whole length of the track:
-
-- **Rolling resistance** (F_rr = C_rr · m · g): energy lost to deformation at the wheel–track contact.
-- **Bearing friction**: a resistive torque τ = r · μ · N that opposes wheel rotation.
-- **Surface friction**: F_f = μ · N, with power loss F_f · v rising with speed.
-
-The total loss is the integral of all three along the track, E_loss = ∫(F_d + F_rr + F_f) dx, so the design target was every source of resistance, not just aero. For stability, the centre of pressure and the centre of mass had to stay close, because their offset creates a pitching moment M = (x_cp − x_cm) · F.
-
 ### CFD method: two solvers, used for different jobs
-
-Both solvers use the finite volume method. The fluid domain is split into small control volumes, and the conservation equations for mass and momentum are solved on each one. Each cell depends on its neighbours, so the result is a large system of algebraic equations solved iteratively until it converges. Understanding this made us more careful about mesh quality and boundary conditions.
 
 I simplified each new geometry and screened it in Ansys Discovery's real-time solver. Only the designs that survived went to Ansys Fluent for a steady-state RANS run.
 
