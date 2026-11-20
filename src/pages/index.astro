@@ -6,8 +6,6 @@ import { getProjects } from '../lib/projects';
 import { SITE } from '../site';
 
 const projects = await getProjects();
-const featured = projects.filter((p) => p.data.featured);
-const side = projects.filter((p) => !p.data.featured);
 ---
 <Base>
   <div class="container home">
@@ -21,14 +19,9 @@ const side = projects.filter((p) => !p.data.featured);
       </p>
     </section>
 
-    <section aria-labelledby="featured-h">
-      <h2 id="featured-h" class="label">Selected work</h2>
-      <ul class="list">{featured.map((p) => <ProjectRow project={p} />)}</ul>
-    </section>
-
-    <section aria-labelledby="side-h">
-      <h2 id="side-h" class="label">Other projects</h2>
-      <ul class="list">{side.map((p) => <ProjectRow project={p} />)}</ul>
+    <section aria-labelledby="projects-h">
+      <h2 id="projects-h" class="label">Projects</h2>
+      <ul class="list">{projects.map((p) => <ProjectRow project={p} />)}</ul>
     </section>
 
     <ContactLinks />

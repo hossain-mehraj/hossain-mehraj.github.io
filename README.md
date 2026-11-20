@@ -29,8 +29,8 @@ icon: wrench                    # fallback if there's no thumbnail: https://luci
 tags: [CAD, Manufacturing]      # 1–4 tags; the home page shows the first 2
 role: Designer
 dates: Jan 2026 – Mar 2026
-featured: false                 # true = "Selected work", false = "Other projects"
-order: 7                        # sort order on the home page and for next/previous links
+featured: true                  # shown in the 404 page suggestions
+order: 5                        # sort order on the home page and for next/previous links
 heroImage: ../../assets/projects/my-project/hero.jpg   # optional
 heroAlt: Describe the hero image
 heroCaption: Optional caption under the hero.
@@ -84,3 +84,14 @@ One-time setup: GitHub → repo **Settings → Pages → Build and deployment �
 | `src/layouts/Base.astro` | `<head>`, SEO/Open Graph tags, header, footer, page transitions |
 | `src/pages/projects/[slug].astro` | Project page template |
 | `public/` | Files served as-is: `favicon.svg`, `resume.pdf`, `robots.txt` |
+
+## Engineering drawings
+
+The pen, pen box, and tic-tac-toe drawings are generated from the dimension tables at the top of
+`scripts/drawings/make-drawings.mjs`. Edit a number there, then run:
+
+```bash
+npm run drawings
+```
+
+The PNGs are written to `src/assets/projects/machine-shop/`.
