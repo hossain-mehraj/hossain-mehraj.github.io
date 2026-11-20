@@ -1,0 +1,51 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import ProjectIcon from './ProjectIcon.astro';
+
+interface Props { project: CollectionEntry<'projects'>; size?: 'lg' | 'sm' }
+const { project, size = 'lg' } = Astro.props;
+const p = project.data;
+---
+<li class:list={['tile', size]}>
+  <a href={`/projects/${p.slug}/`} class="tile-link">
+    <div class="tile-top">
+      <span class="icon-wrap" transition:name={`icon-${p.slug}`}><ProjectIcon name={p.icon} thumbnail={p.thumbnail} /></span>
+      <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+    </div>
+    <h3 class="tile-title">{p.title}</h3>
+    <p class="tile-summary">{p.summary}</p>
+    <ul class="tags" aria-label="Tags">
+      {p.tags.slice(0, 3).map((t) => <li class="tag">{t}</li>)}
+    </ul>
+  </a>
+</li>
+
+<style>
+  .tile { list-style: none; }
+  .tile-link {
+    display: flex; flex-direction: column; gap: var(--s2); height: 100%;
+    padding: var(--s4); border: 1px solid var(--border); border-radius: var(--radius);
+    background: var(--surface); color: var(--text); text-decoration: none;
+    transition: transform 0.25s var(--ease), border-color 0.25s, box-shadow 0.25s;
+  }
+  .tile-link:hover, .tile-link:focus-visible {
+    transform: translateY(-2px);
+    border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+    box-shadow: var(--shadow);
+  }
+  .tile-link:focus-visible { outline-offset: 2px; border-radius: var(--radius); }
+  .tile-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: var(--s1); }
+  .arrow { color: var(--muted); opacity: 0; transform: translate(-4px, 4px); transition: all 0.25s var(--ease); }
+  .tile-link:hover .arrow, .tile-link:focus-visible .arrow { opacity: 1; transform: none; color: var(--accent); }
+  .tile-title { font-size: 1.0625rem; font-weight: 600; letter-spacing: -0.01em; }
+  .tile-summary { color: var(--muted); font-size: 0.9375rem; line-height: 1.5; margin: 0 0 var(--s2); flex: 1; }
+
+  .sm .tile-link { flex-direction: row; flex-wrap: wrap; align-items: center; column-gap: var(--s3); row-gap: 6px; padding: var(--s3); }
+  .sm :global(.project-icon) { width: 34px; height: 34px; border-radius: 8px; }
+  .sm :global(.project-icon svg) { width: 18px; height: 18px; }
+  .sm .tile-top { margin: 0; }
+  .sm .arrow { display: none; }
+  .sm .tile-title { font-size: 1rem; flex: 1; min-width: 0; }
+  .sm .tile-summary { flex-basis: 100%; margin: 0; font-size: 0.875rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .sm .tags { flex-basis: 100%; }
+</style>
