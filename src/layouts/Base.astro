@@ -5,7 +5,7 @@ import { getImage } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 import ThemeToggle from '../components/ThemeToggle.astro';
 import { SITE } from '../site';
-import defaultOg from '../assets/projects/team-lux/sr-car.jpg';
+import defaultOg from '../assets/projects/stem-racing-car/render-three-quarter.jpg';
 
 interface Props {
   title?: string;
@@ -19,7 +19,7 @@ const {
   title,
   description = SITE.description,
   ogImage = defaultOg,
-  ogImageAlt = 'The finished Team Lux race car',
+  ogImageAlt = 'Render of the Team Lux STEM Racing car',
   type = 'website',
   noindex = false,
 } = Astro.props;
