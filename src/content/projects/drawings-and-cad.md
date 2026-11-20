@@ -1,8 +1,9 @@
 ---
 title: Engineering Drawings & CAD
 slug: drawings-and-cad
-summary: 12+ fully dimensioned drawings, each one used to machine the part, plus self-directed CAD models.
+summary: "12+ dimensioned drawings, each used to machine the part."
 icon: ruler
+thumbnail: ../../assets/projects/drawings-and-cad/cad-turbine.png
 tags: [CAD, Drawings]
 role: Designer and drafter
 dates: 2023 – 2026

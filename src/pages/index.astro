@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import ProjectTile from '../components/ProjectTile.astro';
+import ProjectRow from '../components/ProjectRow.astro';
 import ContactLinks from '../components/ContactLinks.astro';
 import { getProjects } from '../lib/projects';
 import { SITE } from '../site';
@@ -11,28 +11,24 @@ const side = projects.filter((p) => !p.data.featured);
 ---
 <Base>
   <div class="container home">
-    <section class="intro" aria-labelledby="name">
-      <h1 id="name">{SITE.name}</h1>
-      <p class="tagline mono">{SITE.tagline} · {SITE.location}</p>
-      <p class="bio">
+    <section class="intro">
+      <h1>{SITE.name}</h1>
+      <p class="muted">{SITE.tagline}, {SITE.location}.</p>
+      <p>
         I design parts, simulate them, and then make them: a nationally ranked CO₂ race car,
-        22 custom keyboards built for clients, and three years of lathe, mill, and CNC work held to ±0.005 inches.{' '}
-        <a href="/about/">More about me →</a>
+        22 custom keyboards built for clients, and three years of lathe, mill, and CNC work held to ±0.005 inches.
+        More <a href="/about/">about me</a>.
       </p>
     </section>
 
     <section aria-labelledby="featured-h">
-      <h2 id="featured-h" class="section-label mono">Featured</h2>
-      <ul class="grid featured">
-        {featured.map((p) => <ProjectTile project={p} />)}
-      </ul>
+      <h2 id="featured-h" class="label">Featured</h2>
+      <ul class="list">{featured.map((p) => <ProjectRow project={p} />)}</ul>
     </section>
 
     <section aria-labelledby="side-h">
-      <h2 id="side-h" class="section-label mono">Side projects</h2>
-      <ul class="grid side">
-        {side.map((p) => <ProjectTile project={p} size="sm" />)}
-      </ul>
+      <h2 id="side-h" class="label">Side projects</h2>
+      <ul class="list">{side.map((p) => <ProjectRow project={p} />)}</ul>
     </section>
 
     <ContactLinks />
@@ -40,20 +36,11 @@ const side = projects.filter((p) => !p.data.featured);
 </Base>
 
 <style>
-  .home { padding-top: var(--s3); }
-  .intro { max-width: 600px; margin-bottom: var(--s5); }
-  h1 { font-size: clamp(2.25rem, 6vw, 2.75rem); letter-spacing: -0.035em; }
-  .tagline { color: var(--accent); margin: var(--s2) 0 var(--s4); }
-  .bio { color: var(--muted); font-size: 1.0625rem; margin: 0; }
-  .bio a { white-space: nowrap; }
-  .section-label { font-size: 0.75rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: 0 0 var(--s3); }
-  .grid { display: grid; gap: var(--s3); padding: 0; margin: 0 0 var(--s4); }
-  .featured { grid-template-columns: repeat(3, 1fr); }
-  .side { grid-template-columns: repeat(3, 1fr); margin-bottom: var(--s5); }
-  @media (max-width: 860px) {
-    .featured, .side { grid-template-columns: repeat(2, 1fr); }
-  }
-  @media (max-width: 560px) {
-    .featured, .side { grid-template-columns: 1fr; }
-  }
+  .home { padding-top: var(--s4); }
+  .intro { margin-bottom: var(--s5); }
+  h1 { font-size: 1.125rem; font-weight: 600; letter-spacing: -0.01em; }
+  .intro p { margin: 0 0 var(--s3); }
+  .intro .muted { margin-bottom: var(--s4); }
+  .label { font-size: 0.875rem; font-weight: 500; color: var(--muted); letter-spacing: 0; margin: 0 0 var(--s2); }
+  .list { padding: 0; margin: 0 0 var(--s5); }
 </style>

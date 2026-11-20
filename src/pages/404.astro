@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import ProjectTile from '../components/ProjectTile.astro';
+import ProjectRow from '../components/ProjectRow.astro';
 import { getProjects } from '../lib/projects';
 const featured = (await getProjects()).filter((p) => p.data.featured);
 ---
@@ -9,13 +9,13 @@ const featured = (await getProjects()).filter((p) => p.data.featured);
     <p class="mono code">404</p>
     <h1>This page doesn't exist.</h1>
     <p class="muted">It may have moved when the site was rebuilt. Try one of these, or <a href="/">go home</a>.</p>
-    <ul class="grid">{featured.map((p) => <ProjectTile project={p} />)}</ul>
+    <ul class="list">{featured.map((p) => <ProjectRow project={p} />)}</ul>
   </div>
 </Base>
 
 <style>
-  .nf { padding-top: var(--s7); min-height: 60vh; }
+  .nf { padding-top: var(--s5); min-height: 60vh; }
   .code { color: var(--accent); margin-bottom: var(--s2); }
-  h1 { font-size: clamp(1.75rem, 5vw, 2.5rem); letter-spacing: -0.03em; margin-bottom: var(--s3); }
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--s3); padding: 0; margin-top: var(--s6); }
+  h1 { font-size: 1.5rem; letter-spacing: -0.02em; margin-bottom: var(--s2); }
+  .list { padding: 0; margin-top: var(--s5); }
 </style>

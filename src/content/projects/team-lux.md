@@ -1,8 +1,9 @@
 ---
 title: "Team Lux: STEM Racing"
 slug: team-lux
-summary: A CO₂-powered F1-style car that placed 4th in Canada, with drag cut by 49% in CFD.
+summary: "CO₂ race car that placed 4th in Canada. Drag cut 49% in CFD."
 icon: car
+thumbnail: ../../assets/projects/team-lux/sr-car.jpg
 tags: [CAD, CFD, Manufacturing, Leadership]
 role: Design, Manufacturing & Operations Lead
 dates: Nov 2025 – Apr 2026
@@ -146,10 +147,7 @@ Four cars across the season: one for Regionals, a major redesign, and two matche
 
 ![The car on the start line under the timing gate](../../assets/projects/team-lux/sr-startline.jpg "On the start line at Nationals.")
 ![Plaque reading 2026 National Championships Best Pit Display](../../assets/projects/team-lux/sr-plaque.jpg "Best Pit Display, 2026.")
-
-<!-- TODO (privacy): sr-pit.jpg ("The pit display, with the printed lighthouse at back left.") is held back because the banner shows a group photo with teammates' faces. Cover the faces, save the edited file into src/assets/projects/team-lux/, then add it here:
 ![Team Lux pit display with design panels and a lighthouse model](../../assets/projects/team-lux/sr-pit.jpg "The pit display, with the printed lighthouse at back left.")
--->
 
 ## What I learned
 

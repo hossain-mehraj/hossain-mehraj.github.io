@@ -23,10 +23,10 @@ npm run preview    # serve the production build at http://localhost:4321
 ---
 title: My Project
 slug: my-project                # becomes /projects/my-project/
-summary: One line shown on the home tile.
-icon: wrench                    # any Lucide icon name: https://lucide.dev/icons
-# thumbnail: ../../assets/projects/my-project/thumb.jpg   # optional: photo instead of icon
-tags: [CAD, Manufacturing]      # 1–4 tags; the tile shows the first 3
+summary: "One line shown on the home page (keep it short, quote it)."
+thumbnail: ../../assets/projects/my-project/thumb.jpg  # small photo on the home page list
+icon: wrench                    # fallback if there's no thumbnail: https://lucide.dev/icons
+tags: [CAD, Manufacturing]      # 1–4 tags; the home page shows the first 2
 role: Designer
 dates: Jan 2026 – Mar 2026
 featured: false                 # true = "Featured" row, false = "Side projects"

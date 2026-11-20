@@ -1,8 +1,9 @@
 ---
 title: Machined Pen and Pen Box
 slug: pen-and-box
-summary: An aluminum and brass pen and a hinged box, drawn and machined to ±0.005 in.
+summary: "Aluminum and brass pen with a hinged box, held to ±0.005 in."
 icon: pen-tool
+thumbnail: ../../assets/projects/pen-and-box/pen-inbox.jpg
 tags: [Machining, CNC, Drawings]
 role: Designed, drawn, and machined by me
 dates: "TODO: dates"

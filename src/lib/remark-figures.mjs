@@ -12,9 +12,9 @@ const isBlank = (n) => (n.type === 'text' && !n.value.trim()) || n.type === 'bre
 // Tell Astro how wide each image is actually displayed, so it doesn't ship
 // oversized files (content column is 720px; galleries span up to 960px).
 const SIZES = {
-  1: { width: 1440, sizes: '(min-width: 768px) 720px, 100vw' },
-  2: { width: 1440, sizes: '(min-width: 1000px) 472px, (min-width: 641px) 50vw, 100vw' },
-  3: { width: 1280, sizes: '(min-width: 1000px) 309px, (min-width: 641px) 33vw, 100vw' },
+  1: { width: 1440, sizes: '(min-width: 700px) 640px, 100vw' },
+  2: { width: 1440, sizes: '(min-width: 700px) 316px, (min-width: 641px) 50vw, 100vw' },
+  3: { width: 1280, sizes: '(min-width: 700px) 208px, (min-width: 641px) 33vw, 100vw' },
 };
 
 function toFigure(image, perRow) {
