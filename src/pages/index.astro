@@ -22,12 +22,12 @@ const side = projects.filter((p) => !p.data.featured);
     </section>
 
     <section aria-labelledby="featured-h">
-      <h2 id="featured-h" class="label">Featured</h2>
+      <h2 id="featured-h" class="label">Selected work</h2>
       <ul class="list">{featured.map((p) => <ProjectRow project={p} />)}</ul>
     </section>
 
     <section aria-labelledby="side-h">
-      <h2 id="side-h" class="label">Side projects</h2>
+      <h2 id="side-h" class="label">Other projects</h2>
       <ul class="list">{side.map((p) => <ProjectRow project={p} />)}</ul>
     </section>
 

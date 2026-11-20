@@ -43,7 +43,7 @@ const meta = [p.role, p.dates, p.team].filter(Boolean);
     </header>
 
     {p.heroImage && (
-      <figure class:list={['hero', { contain: p.heroImage.format === 'png' }]} data-lightbox transition:name={`thumb-${p.slug}`}>
+      <figure class="hero" data-lightbox transition:name={`thumb-${p.slug}`}>
         <Image src={p.heroImage} alt={p.heroAlt!} loading="eager" fetchpriority="high" widths={[480, 640, 960, 1280, 1920]} sizes="(min-width: 700px) 640px, 100vw" />
         {p.heroCaption && <figcaption>{p.heroCaption}</figcaption>}
       </figure>
@@ -80,9 +80,7 @@ const meta = [p.role, p.dates, p.team].filter(Boolean);
   .links { display: flex; gap: var(--s3); margin: var(--s3) 0 0; font-size: 0.875rem; }
 
   .hero { margin: 0 0 var(--s5); }
-  .hero :global(img) { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 6px; cursor: zoom-in; background: var(--hover); }
-  /* Drawings and CAD renders (PNG) are shown whole instead of cropped */
-  .hero.contain :global(img) { object-fit: contain; background: #fff; }
+  .hero :global(img) { width: 100%; height: auto; border-radius: 6px; cursor: zoom-in; background: var(--hover); }
   .hero figcaption { margin-top: var(--s2); color: var(--muted); font-size: 0.8125rem; }
 
   .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: var(--s4); margin: 0 0 var(--s7); }

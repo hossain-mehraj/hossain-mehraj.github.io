@@ -29,7 +29,7 @@ icon: wrench                    # fallback if there's no thumbnail: https://luci
 tags: [CAD, Manufacturing]      # 1–4 tags; the home page shows the first 2
 role: Designer
 dates: Jan 2026 – Mar 2026
-featured: false                 # true = "Featured" row, false = "Side projects"
+featured: false                 # true = "Selected work", false = "Other projects"
 order: 7                        # sort order on the home page and for next/previous links
 heroImage: ../../assets/projects/my-project/hero.jpg   # optional
 heroAlt: Describe the hero image

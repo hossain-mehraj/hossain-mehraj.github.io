@@ -3,7 +3,7 @@ title: Tic-Tac-Toe Board
 slug: tic-tac-toe
 summary: "Machined board with brass and aluminum pegs."
 icon: grid-3x3
-thumbnail: ../../assets/projects/tic-tac-toe/ttt-game.jpg
+thumbnail: ../../assets/projects/tic-tac-toe/thumb.jpg
 tags: [Machining, Drawings]
 role: Designed, drawn, and machined by me
 dates: "TODO: dates"
