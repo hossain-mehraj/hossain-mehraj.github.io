@@ -1,0 +1,299 @@
+---
+title: "STEM Racing: Team Lux"
+slug: stem-racing
+summary: "CO₂ race car, 4th in Canada: the engineering and the business."
+icon: car
+thumbnail: ../../assets/projects/stem-racing/thumb.jpg
+tags: [CAD, CFD, Business]
+role: Design & Manufacturing Lead; Operations & Sponsorship
+dates: Nov 2025 – Apr 2026
+featured: true
+order: 1
+heroImage: ../../assets/projects/stem-racing/render-exploded.jpg
+heroAlt: Exploded render of the Team Lux car showing the body, front and rear wings, halo, wheels, and bearings separated in space
+team: 6 members and 3 helpers (Team Lux)
+links: {}
+tabs:
+  - id: engineering
+    label: Engineering
+    role: Design & Manufacturing Lead
+    tools: [Onshape, Fusion 360, Ansys Discovery, Ansys Fluent]
+    heroImage: ../../assets/projects/stem-racing/render-exploded.jpg
+    heroAlt: Exploded render of the Team Lux car showing the body, front and rear wings, halo, wheels, and bearings separated in space
+    heroCaption: Exploded view of the final Nationals car.
+    stats:
+      - { value: "4th", label: "in Canada, out of 12 national finalist teams" }
+      - { value: "49%", label: "cut in simulated drag, 0.45 N to 0.229 N" }
+      - { value: "< 0.025 mm", label: "machined ridge height on aero surfaces" }
+      - { value: "4 cars", label: "built and raced across the season" }
+  - id: enterprise
+    label: Enterprise
+    role: Operations & Sponsorship Lead
+    tools: [Gantt chart, WBS, RACI matrix, Risk register, Stakeholder register, Mail Suite]
+    heroImage: ../../assets/projects/stem-racing/team-apparel.jpg
+    heroAlt: Front and back of the black Team Lux race jersey with gold lighthouse logo and sponsor marks
+    heroCaption: Team Lux race jerseys, with sponsor placement by tier.
+    stats:
+      - { value: "$11,600", label: "raised: $4,000 cash and $7,600 in kind" }
+      - { value: "15+", label: "sponsors, from a list of 1,000+ companies" }
+      - { value: "1st", label: "Best Pit Display, 2026 Nationals" }
+      - { value: "2nd · 3rd", label: "Project Management · Brand Identity" }
+---
+
+<!-- tab: engineering -->
+
+## Overview
+
+STEM Racing (formerly F1 in Schools) asks student teams to design, build, and race a CO₂-powered car inside a tight rulebook. Our team, Team Lux, formed two weeks before Regionals, qualified, and finished 4th at Nationals, about 10 points out of 1,000 short of the international final. I led the car's design and manufacturing.
+
+This tab covers the car. The business side (sponsorship, budget, project management, and brand) is under [Enterprise](#enterprise).
+
+## Problem / Goal
+
+In a tightly regulated specification series, performance comes from marginal gains. We had almost no track time, so the car had to be developed in simulation, with every change justified by first principles and checked in CFD before it was machined.
+
+The targets were quantifiable from the start: drag coefficient (C_d), frontal area, rolling resistance, and the moment arm between the centre of mass and the centre of pressure.
+
+## What I did
+
+- Led the aerodynamic and mechanical design in Onshape and Fusion 360.
+- Ran the CFD workflow in Ansys Discovery and Ansys Fluent, with mentorship from KM Aero on reading the results.
+- Planned the machining process and moved production from 5-axis to a 3-axis vacuum-table router.
+- Chose the materials for every 3D-printed part.
+- Produced the technical drawings and engineering renders for the design portfolio.
+
+## Process
+
+The development followed four stages: research and constraints, then a baseline concept, then CAD development, then optimisation. Every stage fed back into the next.
+
+### Research: where the energy goes
+
+Aerodynamic drag is the dominant force resisting the car:
+
+**F_d = ½ ρ v² C_d A**, and the power it costs is **P_d = ½ ρ v³ C_d A**
+
+Because drag grows with the square of speed (and its power cost with the cube), small reductions in C_d or frontal area A pay off far more than adding downforce. Lift still mattered: too much positive lift unloads the wheels and bearings and hurts stability.
+
+Mechanical losses act the whole length of the track:
+
+- **Rolling resistance** (F_rr = C_rr · m · g): energy lost to deformation at the wheel–track contact.
+- **Bearing friction**: a resistive torque τ = r · μ · N that opposes wheel rotation.
+- **Surface friction**: F_f = μ · N, with power loss F_f · v rising with speed.
+
+The total loss is the integral of all three along the track, E_loss = ∫(F_d + F_rr + F_f) dx, so the design target was every source of resistance, not just aero. For stability, the centre of pressure and the centre of mass had to stay close, because their offset creates a pitching moment M = (x_cp − x_cm) · F.
+
+### CFD method: two solvers, used for different jobs
+
+Both solvers use the finite volume method. The fluid domain is split into small control volumes, and the conservation equations for mass and momentum are solved on each one. Each cell depends on its neighbours, so the result is a large system of algebraic equations solved iteratively until it converges. Understanding this made us more careful about mesh quality and boundary conditions.
+
+I simplified each new geometry and screened it in Ansys Discovery's real-time solver. Only the designs that survived went to Ansys Fluent for a steady-state RANS run.
+
+| Setting | Value | Why |
+| --- | --- | --- |
+| Freestream | 25 m/s velocity inlet | Typical competition speed |
+| Floor | Moving at 25 m/s | Matches the ground under a real car |
+| CO₂ jet | 80 m/s velocity inlet | Subsonic exit velocity, to model momentum and mixing |
+| Wheels | Rotating at 1,785 rad/s | Rolling at track speed |
+| Domain | Half car, symmetry plane | Same answer for a fraction of the mesh |
+| Reynolds no. | About 374,000 (L = 0.22 m) | Viscous and inertial effects both matter, so geometry is critical |
+
+> **Why this way:** Fluent is accurate but slow. Screening in Discovery first meant the expensive runs were spent only on designs worth measuring. For small changes we edited the mesh directly instead of re-simplifying the whole CAD model.
+
+![Half of the car enclosed in a rectangular fluid domain](../../assets/projects/stem-racing/sr-cfd-domain.jpg "Half-car model inside the fluid domain.")
+![Polyhedral mesh of the fluid domain, finer near the car](../../assets/projects/stem-racing/sr-cfd-mesh.jpg "Mesh, refined near the car surface and wheels.")
+
+![Simplified car in the fluid domain with arrows marking the freestream, moving floor, CO2 jet and wheel rotation](../../assets/projects/stem-racing/cfd-boundary-conditions.jpg "Boundary conditions: freestream, moving floor, CO₂ jet, and rotating wheels.")
+
+### Baseline concept: finding where the energy went
+
+Instead of drawing several unrelated concepts, we built one deliberately simple baseline car and studied it closely. It made **0.64 N of drag (C_d = 0.167)** and **0.52 N of downforce (C_l = 0.135)**, and it showed four problems:
+
+1. The front wing made strong suction but lost energy at the sharp junctions between wing, endplate, and support.
+2. Wake from the front wheels was being drawn under the floor.
+3. Flow separated off the sidepods and re-entered the floor through openings ahead of the rear wheels.
+4. The diffuser's suction peak arrived late and weak, which added pressure drag.
+
+The design actions followed directly: reprofile the wing supports, use outwash and sidepod shape to keep wheel wake out of the floor, close or re-angle the floor openings, and move the diffuser's kick point forward with a smooth 5–10° expansion.
+
+> **Why this way:** One controlled baseline let us change a single feature at a time and know which change caused which result.
+
+![Front view render of the simple baseline concept car with a flat rear wing](../../assets/projects/stem-racing/baseline-concept.jpg "The baseline concept, built only to be measured.")
+
+![Velocity plot under the floor of the car with a circled region of disturbed flow](../../assets/projects/stem-racing/sr-cfd-underfloor.jpg "Underfloor velocity. The circled region is misaligned flow entering the floor.")
+![Pressure coefficient map over the baseline car](../../assets/projects/stem-racing/sr-cfd-cp.jpg "Pressure coefficient on the baseline.")
+![Blue surfaces around the car marking regions of total pressure loss](../../assets/projects/stem-racing/sr-cfd-loss.jpg "Regions of total pressure loss.")
+
+### Wings: three front wings, four rear wings
+
+**Front wing.** The first wing used a high-downforce profile, inspired by older F1 cars, for stability. Once the sidepods were doing that job, I moved to an aggressive Formula E–style wing with more outwash to push air around the front tyres. It was faster but hard to balance and to make. The final wing combined the best of both, with a neutral profile and reshaped endplates that keep wheel wake out of the floor.
+
+![CAD render of the first front wing with a high-downforce profile](../../assets/projects/stem-racing/front-wing-v1.jpg "Front wing 1: Regionals.")
+![CAD render of the Formula E inspired front wing with large curved endplates](../../assets/projects/stem-racing/front-wing-v2.jpg "Front wing 2: Formula E–style outwash.")
+![CAD render of the final front wing with refined endplates](../../assets/projects/stem-racing/front-wing-v3.jpg "Front wing 3: Nationals.")
+
+**Rear wing.** The first rear wing was a simple plate for stability and easy manufacturing. The second added a proper support structure. It worked, but it needed more refinement, so we ran a simpler box-section wing at Test Day. The final wing refined the support-structure design to balance downforce against drag.
+
+![CAD render of the first rear wing, a flat plate](../../assets/projects/stem-racing/rear-wing-v1.jpg "Rear wing 1: Regionals.")
+![CAD render of the second rear wing with a support structure](../../assets/projects/stem-racing/rear-wing-v2.jpg "Rear wing 2: first support structure.")
+
+![CAD render of the box-section rear wing used at test day](../../assets/projects/stem-racing/rear-wing-v3.jpg "Rear wing 3: Test Day.")
+![CAD render of the final curved rear wing around the CO2 cartridge](../../assets/projects/stem-racing/rear-wing-v4.jpg "Rear wing 4: Nationals.")
+
+### Body and sidepods: three of each
+
+**Sidepods.** A blunt first version gave way to aggressive side scoops. CFD showed their sharp edges caused separation, and they were hard to machine consistently, so the final version is a smooth taper that keeps flow attached and shields the rear wheels.
+
+**Body.** Wide and flat at first, then a trimmed nose to cut frontal area, then fully rounded edges for a teardrop shape with a small wake. Before every mesh export, I checked surface continuity with zebra striping and a minimum-radius analysis.
+
+Under identical simulation conditions, drag fell from 0.45 N on the first race design to 0.229 N on the final car.
+
+![CAD model of the first body iteration](../../assets/projects/stem-racing/sr-cad-body-c.jpg "Body 1: Regionals.")
+![CAD model of the second body iteration](../../assets/projects/stem-racing/sr-cad-body-b.jpg "Body 2: trimmed nose.")
+![CAD model of the final body iteration](../../assets/projects/stem-racing/sr-cad-body-a.jpg "Body 3: Nationals.")
+
+![Top-view velocity field around the final car](../../assets/projects/stem-racing/sr-cfd-final-top.jpg "Final car, velocity field from above. The front-wing outwash steers flow around the wheels.")
+![Close-up of streamlines passing the cockpit, sidepod, rear wheel, and rear wing of the final car](../../assets/projects/stem-racing/sr-cfd-streamlines.jpg "Streamlines past the cockpit, sidepod, and rear wing.")
+
+### Wheels: removing the axle
+
+The first car used a rod through the body with a wheel pressed on each end. It was quick to build, but the body needed clearance channels for the rod, which added frontal area, and lining it up at the track took time.
+
+The final design has no through-axle. Each SLS-printed wheel carries a toleranced bearing pocket, and matching recesses in the wheel and the chassis mount hold the bearing in place radially and axially. The wheel itself has a symmetric airfoil cross-section to reduce the drag of a spinning wheel.
+
+![CAD of the first car with axle rods through the body](../../assets/projects/stem-racing/sr-cad-rolling.jpg "First version: through-axles.")
+![CAD of a pair of wheels with integrated bearing mounts](../../assets/projects/stem-racing/sr-cad-wheel.jpg "Final version: bearing-retained wheels.")
+
+### Manufacturing: why we dropped 5-axis
+
+The body's sidepod cutouts and blended curves pointed to 5-axis machining on a trunnion table, and the CAM simulation agreed. The foam did not. Tooling foam has low shear strength, so it distorts under vice jaws or toe clamps, and any fixture blocked toolpaths. The rotary axes also added positional error, so the 5-axis setup created more variation than it removed.
+
+The rules require every body to be cut from its own official foam block, so a ruined block costs both money and days. We moved to a 3-axis router with a vacuum table, which holds each block evenly across its whole base, and machined every body from four sides:
+
+1. **Roughing** with trochoidal toolpaths, which keep radial engagement constant so the tool doesn't see load spikes or deflect.
+2. **Rest machining** with smaller ball-nose cutters to clear what the roughing tool could not reach.
+3. **Finishing passes** with a tight stepover, oriented along the flow direction, leaving ridges under 0.025 mm on the aerodynamic surfaces.
+
+For printed parts I tested PLA and PETG for form studies, SLA resin for low-friction surfaces, and carbon-fibre-filled filament for high-stress parts.
+
+> **Why this way:** With a limited supply of regulation blocks, a reliable process mattered more than fewer setups. When every car is the same shape, a faster run means the design improved, not the machining.
+
+![CNC router machining three foam car bodies, each from its own block](../../assets/projects/stem-racing/sr-cnc-a.jpg "Three bodies in one run, each cut from its own regulation block.")
+![Close-up of a machined foam body showing the CO2 cartridge bore](../../assets/projects/stem-racing/sr-cnc-close.jpg "Machined body and cartridge bore before finishing.")
+
+## Results / Impact
+
+Four cars across the season: one for Regionals, a major redesign for Test Day, and two matched final cars for Nationals. The final car's simulated drag was 49% lower than the first race design (0.45 N to 0.229 N). We placed **4th overall in Canada**.
+
+![Three-quarter render of the final car from above and behind](../../assets/projects/stem-racing/render-three-quarter.jpg "Final car, rendered.")
+![Front three-quarter render of the final car showing the front wing and halo](../../assets/projects/stem-racing/render-front.jpg "Front three-quarter view.")
+
+![The car on the start line under the timing gate](../../assets/projects/stem-racing/sr-startline.jpg "On the start line at Nationals.")
+![The finished Team Lux race car on a workbench: pale machined foam body, grey 3D-printed wings and wheels, red halo](../../assets/projects/stem-racing/sr-car.jpg "The finished car. The body is CNC-machined from tooling foam; the wings, wheels, and halo are 3D printed.")
+
+## What I learned
+
+We finished about 10 points out of 1,000 short of qualifying for internationals. These are the things that cost us time or performance.
+
+| Issue | What happened | Next time |
+| --- | --- | --- |
+| First design had twice the drag | The first car was drawn quickly, before we had studied the flow. CFD later traced its 0.45 N of drag to a blunt nose, front-wheel wake pulled under the floor, and a diffuser that separated. | Run a baseline flow study on a simple car before committing to a full design. |
+| Sidepod scoops that separated | The second sidepod design used aggressive scoops. Their sharp edges caused flow separation, and they were hard to machine the same way twice. | Check each new feature for machinability at the same time as its CFD result, not after. |
+| Through-axle added drag | The first wheel system ran a rod through the body. The clearance channels added frontal area, and aligning the rod at the track cost setup time. | Design the wheel mounting together with the body, instead of adding it to a finished shape. |
+| 5-axis machining failed on foam | CAM simulation said 5-axis was the right process. In practice the foam distorted when clamped and the fixtures blocked toolpaths, so parts varied more, not less. | Cut a test piece in the real material before planning the process around a simulation. |
+| Very little track testing | Joining two weeks before Regionals left almost no track time, so the car was developed in CFD with few timed runs to confirm the predictions. | Schedule timed track runs for each car version so the simulation is checked against real results. |
+
+<!-- tab: enterprise -->
+
+## Overview
+
+STEM Racing is judged on more than lap times. Teams also submit an enterprise portfolio, a verbal presentation, and a pit display, and are scored on project management, sponsorship, and brand. This is the business side of Team Lux's season: how we funded, scheduled, and ran a team that started two weeks behind everyone else.
+
+The car itself is under [Engineering](#engineering).
+
+## Problem / Goal
+
+We were invited two weeks before Regionals, so every other team had a head start. The project had to be planned so that six members and three helpers could work in parallel without waiting on each other. We also had to fund a season of about $11,900 from nothing.
+
+The charter set the deliverables up front: two track-ready cars, two 10-page portfolios, a 10-minute presentation, and a zero-waste pit display.
+
+## What I did
+
+- Ran the team's operations: the project charters, work breakdown, schedule, risk register, and budget.
+- Built the sponsorship outreach system and handled a large share of the sponsor contact myself.
+- Kept the stakeholder register and the milestone check-ins with every sponsor.
+
+## Process
+
+### Charter, scope, and work breakdown
+
+We wrote a project charter in November and a second one after qualifying, when the targets changed. The scope covered the car, both portfolios, the pit display, the presentation, branding, and sponsorship. Anything outside that list was cut.
+
+The work was split into four streams: Car Development, Enterprise, Branding, and Competition. Each stream was broken into tasks, and each task had an owner and acceptance criteria, such as rule compliance for the car and clarity for the portfolios.
+
+![Work breakdown structure: Team Lux project split into Car Development, Enterprise, Branding and Competition, each with three tasks](../../assets/projects/stem-racing/work-breakdown.jpg "Work breakdown structure.")
+
+### Schedule and accountability
+
+A shared Gantt chart ran from early November to Nationals in April. Regionals and Test Day were the checkpoints where we compared progress to plan and re-ordered tasks. A RACI matrix gave every deliverable exactly one accountable owner.
+
+![Gantt chart with eight phases from research and planning in November to final preparation in April](../../assets/projects/stem-racing/gantt.jpg "Season timeline: four cars across eight phases.")
+
+![RACI matrix assigning responsible, accountable, consulted and informed roles for each deliverable](../../assets/projects/stem-racing/raci-matrix.png "RACI matrix by role.")
+![Five-step development loop: research, development and simulation, industry expert consultation, manufacturing and testing, data feedback](../../assets/projects/stem-racing/development-loop.jpg "Our development loop, with an industry review before every build.")
+
+### Communication
+
+We held weekly one-hour meetings at school, with attendance tracked. Between meetings we used a group chat and calls for quick updates, and longer in-person sessions for big pushes. Setbacks were worked through around a physical board until there was a way around them. Written status reports kept completed, in-progress, and planned work visible to everyone, along with current issues.
+
+![Status report listing complete tasks, tasks in progress, planned tasks, current issues and questions for discussion](../../assets/projects/stem-racing/status-report.png "A mid-season status report.")
+
+### Risk register
+
+Nine risks were rated by likelihood and impact, and the highest were handled first. Manufacturing delays and damage to the final car both rated 8, so we started machining early, kept buffer time, and built duplicate cars and spare parts.
+
+![Risk register table of nine risks with ratings from 5 to 8 and preventative measures](../../assets/projects/stem-racing/risk-register.jpg "Risk register.")
+
+The plan was tested once. A rules mix-up during machining ruined a regulation foam block and stopped production with no spare in stock. Our title sponsor, GH Precision, drove out to source a replacement the same day, and we were cutting again within hours.
+
+### Sponsorship: from asking for money to offering value
+
+We started with one goal: funding. We soon learned that companies respond to value, not requests, so we pitched Team Lux as a platform sponsors could grow alongside.
+
+- **Outreach system.** A list of more than 1,000 local and national companies was split across the team and colour-coded. The process ran cold call, follow-up call, sponsorship package, and then regular contact.
+- **Multi-channel.** We used calls, tracked email proposals with our website and package attached, a sponsorship page on the website, Instagram, and personal networks.
+- **In-kind first.** Many companies couldn't give money but could give materials, machining, printing, or expertise. Prioritising in-kind support cut our projected cash budget sharply.
+- **Return for sponsors.** Sponsors got brand placement on the car, jerseys, and pit display, plus social posts, website visibility, and recognition at events.
+- **Stakeholder register.** Every sponsor who signed on was logged with the last contact, who on the team owned the relationship, and how they preferred to be reached. We checked in with each one at milestones.
+
+The result was $4,000 in cash and $7,600 of in-kind CNC machining and 3D printing from more than 15 sponsors, plus software and CFD mentorship.
+
+![Bar chart: projected project cost of over 14,000 dollars before in-kind sponsorship and about 2,000 dollars after](../../assets/projects/stem-racing/in-kind-impact.jpg "Projected cost before and after in-kind sponsorship.")
+![Team Lux sponsorship package, website sponsor tiers and Instagram sponsor posts on laptop and phone mockups](../../assets/projects/stem-racing/sponsorship-materials.jpg "Sponsorship package, website tiers, and sponsor posts.")
+
+### Brand and marketing
+
+The name comes from our school motto, *Lux numquam desit* ("the light will never fail"), and from the Port Credit lighthouse. The logo combines the lighthouse with the motion of the F1 mark. The palette is black and gold: light shining through darkness.
+
+Online, we built a verified Instagram account with 300+ followers, used polls and Q&As to see what content worked, and promoted every sponsor. Offline, we put up posters at school, appeared in the school newsletter, and left printed slips in libraries and recreation centres.
+
+![Team Lux colour palette: black 000000, gold B6995B, light gold E1DA86](../../assets/projects/stem-racing/colour-palette.jpg "Colour palette.")
+![Team Lux Instagram profile, insights showing 13.2k views, website and posts on device mockups](../../assets/projects/stem-racing/digital-marketing.jpg "Instagram, website, and reach.")
+![School newsletter feature and Team Lux Nationals poster](../../assets/projects/stem-racing/print-promotion.jpg "Newsletter feature and poster.")
+
+## Results / Impact
+
+At the 2026 National Championships we placed **1st in Pit Display**, **2nd in Project Management**, and **3rd in Brand Identity**, and **4th overall**. Every deliverable was on time, and four cars were built across the season. The pit display was zero-waste, built from repurposed workshop materials. The lighthouse at the back is a model I designed and 3D printed.
+
+![Plaque reading 2026 National Championships Best Pit Display](../../assets/projects/stem-racing/sr-plaque.jpg "Best Pit Display, 2026.")
+![Team Lux pit display with design panels and a lighthouse model](../../assets/projects/stem-racing/sr-pit.jpg "The pit display, with the printed lighthouse at back left.")
+
+## What I learned
+
+> On a short timeline the plan has to be visible. A register and a chart that everyone can see let people pick up the next task without asking, and the top-rated risks got attention while there was still time to act.
+
+| Area | What happened | Next time |
+| --- | --- | --- |
+| Ruined block, no spare | A rules mix-up during machining ruined a regulation block with no spare in stock, and production stopped until a sponsor sourced a replacement. | Keep at least one spare block on hand, and check each setup against the rules before cutting. |
+| Compressed timeline | The schedule tightened in the final stages, leaving little buffer between testing and final production. | Build more buffer between milestones and start final preparation earlier. |
+| Communication gaps | Scheduling conflicts cut full-team meetings, and updates slipped in busy periods. | More structured check-ins and a single shared place for status. |
+| Local reach | Marketing reached mostly our school and community. | Expand to more platforms and target a broader audience. |

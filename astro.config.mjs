@@ -3,6 +3,7 @@ import { defineConfig } from 'astro/config';
 import { unified } from '@astrojs/markdown-remark';
 import remarkFigures from './src/lib/remark-figures.mjs';
 import rehypeTableLabels from './src/lib/rehype-table-labels.mjs';
+import remarkTabs from './src/lib/remark-tabs.mjs';
 
 export default defineConfig({
   site: 'https://hossain-mehraj.github.io',
@@ -13,6 +14,6 @@ export default defineConfig({
     responsiveStyles: true,
   },
   markdown: {
-    processor: unified({ remarkPlugins: [remarkFigures], rehypePlugins: [rehypeTableLabels] }),
+    processor: unified({ remarkPlugins: [remarkFigures, remarkTabs], rehypePlugins: [rehypeTableLabels] }),
   },
 });

@@ -95,3 +95,22 @@ npm run drawings
 ```
 
 The PNGs are written to `src/assets/projects/machine-shop/`.
+
+## Tabs within a project
+
+A project can be split into tabs (the STEM Racing page uses Engineering / Enterprise). Add a
+`tabs:` list to the frontmatter (each with `id`, `label`, and optional `role`, `tools`,
+`heroImage`, `heroAlt`, `heroCaption`, `stats`), then start each tab's content in the body with
+a marker on its own line:
+
+```md
+<!-- tab: engineering -->
+## Overview
+...
+<!-- tab: enterprise -->
+## Overview
+...
+```
+
+Each tab gets its own link (`/projects/stem-racing/#enterprise`), and `[text](#enterprise)` inside
+the body switches tabs.
