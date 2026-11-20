@@ -1,0 +1,138 @@
+---
+import { render } from 'astro:content';
+import { Image } from 'astro:assets';
+import { ArrowLeft, ArrowRight, ExternalLink } from '@lucide/astro';
+import Base from '../../layouts/Base.astro';
+import ProjectIcon from '../../components/ProjectIcon.astro';
+import Lightbox from '../../components/Lightbox.astro';
+import { getProjects } from '../../lib/projects';
+
+export async function getStaticPaths() {
+  const projects = await getProjects();
+  return projects.map((project, i) => ({
+    params: { slug: project.data.slug },
+    props: {
+      project,
+      prev: projects[(i - 1 + projects.length) % projects.length],
+      next: projects[(i + 1) % projects.length],
+    },
+  }));
+}
+
+const { project, prev, next } = Astro.props;
+const p = project.data;
+const { Content } = await render(project);
+const links = [
+  p.links?.github && { label: 'GitHub', url: p.links.github },
+  p.links?.live && { label: 'Live', url: p.links.live },
+  ...(p.links?.other ?? []),
+].filter(Boolean) as { label: string; url: string }[];
+---
+<Base title={p.title} description={p.summary} ogImage={p.heroImage} ogImageAlt={p.heroAlt} type="article">
+  <article class="container narrow project">
+    <a class="back mono" href="/"><ArrowLeft size={14} aria-hidden="true" /> Back to all projects</a>
+
+    <header class="project-header">
+      <span class="icon-wrap" transition:name={`icon-${p.slug}`}><ProjectIcon name={p.icon} thumbnail={p.thumbnail} class="lg" size={26} /></span>
+      <h1>{p.title}</h1>
+      <p class="lede">{p.summary}</p>
+      <dl class="meta">
+        <div><dt>Role</dt><dd>{p.role}</dd></div>
+        <div><dt>Dates</dt><dd>{p.dates}</dd></div>
+        {p.team && <div><dt>Team</dt><dd>{p.team}</dd></div>}
+        {p.tools && <div class="wide"><dt>Tools</dt><dd>{p.tools.join(', ')}</dd></div>}
+      </dl>
+      <div class="header-row">
+        <ul class="tags" aria-label="Tags">{p.tags.map((t) => <li class="tag">{t}</li>)}</ul>
+        {links.length > 0 && (
+          <ul class="ext-links">
+            {links.map((l) => <li><a href={l.url} target="_blank" rel="noopener">{l.label} <ExternalLink size={13} aria-hidden="true" /></a></li>)}
+          </ul>
+        )}
+      </div>
+    </header>
+
+    {p.heroImage && (
+      <figure class:list={["hero", { contain: p.heroImage.format === "png" }]} data-lightbox>
+        <Image src={p.heroImage} alt={p.heroAlt!} loading="eager" fetchpriority="high" widths={[480, 720, 960, 1440, 1920]} sizes="(min-width: 1000px) 960px, 100vw" />
+        {p.heroCaption && <figcaption>{p.heroCaption}</figcaption>}
+      </figure>
+    )}
+
+    {p.stats && (
+      <ul class="stats">
+        {p.stats.map((s) => <li><strong>{s.value}</strong><span>{s.label}</span></li>)}
+      </ul>
+    )}
+
+    <div class="prose">
+      <Content />
+    </div>
+
+    <nav class="pager" aria-label="More projects">
+      <a href={`/projects/${prev.data.slug}/`} class="pager-link">
+        <span class="mono muted"><ArrowLeft size={13} aria-hidden="true" /> Previous</span>
+        <span class="pager-title">{prev.data.title}</span>
+      </a>
+      <a href={`/projects/${next.data.slug}/`} class="pager-link next">
+        <span class="mono muted">Next <ArrowRight size={13} aria-hidden="true" /></span>
+        <span class="pager-title">{next.data.title}</span>
+      </a>
+    </nav>
+    <p class="all"><a class="back mono" href="/"><ArrowLeft size={14} aria-hidden="true" /> Back to all projects</a></p>
+  </article>
+  <Lightbox />
+</Base>
+
+<style>
+  .project { padding-top: var(--s4); padding-bottom: var(--s6); }
+  .back { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); text-decoration: none; }
+  .back:hover { color: var(--accent); }
+  .project-header { margin: var(--s6) 0 var(--s5); }
+  .icon-wrap { display: inline-block; margin-bottom: var(--s4); }
+  h1 { font-size: clamp(2rem, 5vw, 2.75rem); letter-spacing: -0.03em; }
+  .lede { font-size: 1.1875rem; color: var(--muted); margin: var(--s3) 0 var(--s5); }
+  .meta { display: grid; grid-template-columns: repeat(3, auto); justify-content: start; gap: var(--s3) var(--s6); margin: 0 0 var(--s4); }
+  .meta .wide { grid-column: 1 / -1; }
+  .meta dt { font-family: var(--font-mono); font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 2px; }
+  .meta dd { margin: 0; font-size: 0.9375rem; }
+  .header-row { display: flex; flex-wrap: wrap; gap: var(--s3); justify-content: space-between; align-items: center; }
+  .ext-links { display: flex; gap: var(--s3); list-style: none; padding: 0; margin: 0; }
+  .ext-links a { display: inline-flex; align-items: center; gap: 4px; font-size: 0.875rem; }
+
+  .hero { margin: 0 0 var(--s5); }
+  .hero :global(img) { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: var(--radius); border: 1px solid var(--border); cursor: zoom-in; }
+  /* Drawings and CAD renders (PNG) are shown whole instead of cropped */
+  .hero.contain :global(img) { object-fit: contain; background: #fff; }
+  .hero figcaption { margin-top: var(--s2); color: var(--muted); font-size: 0.875rem; }
+  @media (min-width: 1000px) {
+    .hero { margin-inline: calc((var(--read) - var(--wide)) / 2); }
+  }
+
+  .stats {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--s4);
+    list-style: none; padding: var(--s4) 0; margin: 0 0 var(--s6);
+    border-block: 1px solid var(--border);
+  }
+  .stats li { display: flex; flex-direction: column; gap: 4px; }
+  .stats strong { font-size: 1.5rem; font-weight: 650; letter-spacing: -0.02em; color: var(--accent); }
+  .stats span { font-size: 0.8125rem; color: var(--muted); line-height: 1.45; }
+
+  .pager { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s3); margin-top: var(--s8); }
+  .pager-link {
+    display: flex; flex-direction: column; gap: 6px; padding: var(--s4);
+    border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface);
+    color: var(--text); text-decoration: none;
+    transition: transform 0.25s var(--ease), border-color 0.25s, box-shadow 0.25s;
+  }
+  .pager-link:hover { transform: translateY(-2px); border-color: color-mix(in srgb, var(--accent) 45%, var(--border)); box-shadow: var(--shadow); }
+  .pager-link .mono { display: inline-flex; align-items: center; gap: 4px; }
+  .pager-link.next { text-align: right; align-items: flex-end; }
+  .pager-title { font-weight: 600; }
+  .all { margin-top: var(--s5); text-align: center; }
+  @media (max-width: 640px) {
+    .meta { grid-template-columns: 1fr 1fr; gap: var(--s3); }
+    .pager { grid-template-columns: 1fr; }
+    .pager-link.next { text-align: left; align-items: flex-start; }
+  }
+</style>

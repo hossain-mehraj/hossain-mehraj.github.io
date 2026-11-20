@@ -1,0 +1,33 @@
+---
+import { Sun, Moon } from '@lucide/astro';
+---
+<button class="icon-btn theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+  <Sun class="i-sun" size={16} aria-hidden="true" />
+  <Moon class="i-moon" size={16} aria-hidden="true" />
+</button>
+
+<style>
+  .i-moon { display: none; }
+  :global([data-theme-resolved='dark']) .i-sun { display: none; }
+  :global([data-theme-resolved='dark']) .i-moon { display: block; }
+</style>
+
+<script>
+  function setup() {
+    const btn = document.querySelector<HTMLButtonElement>('.theme-toggle');
+    if (!btn) return;
+    const root = document.documentElement;
+    const sync = () => btn.setAttribute('aria-pressed', String(root.dataset.themeResolved === 'dark'));
+    sync();
+    btn.onclick = () => {
+      const next = root.dataset.themeResolved === 'dark' ? 'light' : 'dark';
+      const sys = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      // Choosing the same as the system clears the override, so it follows the system again.
+      if (next === sys) { localStorage.removeItem('theme'); delete root.dataset.theme; }
+      else { localStorage.setItem('theme', next); root.dataset.theme = next; }
+      root.dataset.themeResolved = next;
+      sync();
+    };
+  }
+  document.addEventListener('astro:page-load', setup);
+</script>
