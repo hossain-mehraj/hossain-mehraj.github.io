@@ -8,7 +8,7 @@ tags: [Machining, CAD, Drawings]
 role: Designed, drawn, and machined by me
 dates: 2023 – 2026
 featured: true
-order: 4
+order: 3
 heroImage: ../../assets/projects/machine-shop/pen-inbox.jpg
 heroAlt: An aluminum and brass pen resting in the milled pocket of an open aluminum box
 heroCaption: The finished pen in its box. I designed both, drew them, and machined every part.

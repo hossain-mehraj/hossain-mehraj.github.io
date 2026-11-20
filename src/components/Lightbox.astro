@@ -45,14 +45,14 @@ import { X, ChevronLeft, ChevronRight } from '@lucide/astro';
 <script>
   function setup() {
     const dlg = document.querySelector<HTMLDialogElement>('dialog.lightbox');
-    const imgs = [...document.querySelectorAll<HTMLImageElement>('.prose figure img, [data-lightbox] img')];
-    if (!dlg || !imgs.length) return;
+    const all = [...document.querySelectorAll<HTMLImageElement>('.prose figure img, [data-lightbox] img')];
+    if (!dlg || !all.length) return;
     const view = dlg.querySelector('img')!;
     const cap = dlg.querySelector('figcaption')!;
     const count = dlg.querySelector('.lb-count')!;
+    let imgs = all;
     let i = 0;
     let opener: HTMLElement | null = null;
-    dlg.classList.toggle('single', imgs.length < 2);
 
     const show = (n: number) => {
       i = (n + imgs.length) % imgs.length;
@@ -66,11 +66,16 @@ import { X, ChevronLeft, ChevronRight } from '@lucide/astro';
       count.textContent = `${i + 1} / ${imgs.length}`;
     };
 
-    imgs.forEach((img, n) => {
+    all.forEach((img) => {
       img.tabIndex = 0;
       img.setAttribute('role', 'button');
       img.setAttribute('aria-label', `View larger: ${img.alt}`);
-      const open = () => { opener = img; show(n); dlg.showModal(); };
+      const open = () => {
+        // Only step through images that are visible (e.g. in the current tab).
+        imgs = all.filter((x) => x.offsetParent !== null);
+        dlg.classList.toggle('single', imgs.length < 2);
+        opener = img; show(Math.max(0, imgs.indexOf(img))); dlg.showModal();
+      };
       img.onclick = open;
       img.onkeydown = (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } };
     });

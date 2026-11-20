@@ -32,6 +32,21 @@ const projects = defineCollection({
           other: z.array(z.object({ label: z.string(), url: z.url() })).optional(),
         })
         .optional(),
+      /** Optional tabs: split the body with <!-- tab: id --> markers; each tab can have its own hero, role, tools and stats. */
+      tabs: z
+        .array(
+          z.object({
+            id: z.string(),
+            label: z.string(),
+            role: z.string().optional(),
+            tools: z.array(z.string()).optional(),
+            heroImage: image().optional(),
+            heroAlt: z.string().optional(),
+            heroCaption: z.string().optional(),
+            stats: z.array(z.object({ value: z.string(), label: z.string() })).optional(),
+          }),
+        )
+        .optional(),
       /** Set true to hide a project from the build. */
       draft: z.boolean().default(false),
     })
