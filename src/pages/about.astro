@@ -1,5 +1,4 @@
 ---
-import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import ContactLinks from '../components/ContactLinks.astro';
 import { SITE } from '../site';
@@ -21,7 +20,7 @@ const experience = [
 ];
 ---
 <Base title="About" description={`About ${SITE.name}: engineering student at the University of Toronto. Skills in CAD, CFD, CNC machining, 3D printing and electronics.`}>
-  <div class="container narrow about">
+  <div class="container about">
     <h1>About</h1>
     <div class="prose">
       <p>
@@ -35,7 +34,7 @@ const experience = [
       <p><!-- TODO: program/year at U of T, what you're looking for (co-op/internship terms), and interests outside engineering. -->TODO: add your program and year at U of T, what kind of roles you're looking for, and anything outside engineering.</p>
     </div>
 
-    <h2 class="section-label mono">Skills</h2>
+    <h2 class="section-label">Skills</h2>
     <dl class="skills">
       {skills.map((s) => (
         <div>
@@ -45,30 +44,31 @@ const experience = [
       ))}
     </dl>
 
-    <h2 class="section-label mono">Experience</h2>
+    <h2 class="section-label">Experience</h2>
     <ol class="xp">
       {experience.map((x) => (
         <li>
-          <div class="xp-head"><strong>{x.role}</strong><span class="mono muted">{x.dates}</span></div>
+          <div class="xp-head"><span class="xp-role">{x.role}</span><span class="mono muted">{x.dates}</span></div>
           <div class="muted">{x.org}</div>
           <p>{x.text}</p>
         </li>
       ))}
     </ol>
 
-    <h2 class="section-label mono">Contact</h2>
+    <h2 class="section-label">Contact</h2>
     <ContactLinks />
   </div>
 </Base>
 
 <style>
-  .about { padding-top: var(--s5); }
-  h1 { font-size: clamp(2rem, 5vw, 2.5rem); letter-spacing: -0.03em; margin-bottom: var(--s4); }
-  .section-label { font-size: 0.75rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: var(--s7) 0 var(--s4); }
+  .about { padding-top: var(--s4); }
+  h1 { font-size: 1.5rem; letter-spacing: -0.02em; margin-bottom: var(--s4); }
+  .section-label { font-size: 0.875rem; font-weight: 500; font-family: var(--font-sans); color: var(--muted); margin: var(--s7) 0 var(--s3); }
   .skills { margin: 0; display: grid; gap: var(--s4); }
-  .skills dt { font-weight: 600; margin-bottom: var(--s2); font-size: 0.9375rem; }
+  .skills dt { font-weight: 500; margin-bottom: 2px; }
   .skills dd { margin: 0; }
-  .skills .tag { font-size: 0.75rem; padding: 6px 10px; }
+  .skills .tags { row-gap: 2px; }
+  .xp-role { font-weight: 500; }
   .xp { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--s5); }
   .xp-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--s2); }
   .xp p { margin: var(--s2) 0 0; }

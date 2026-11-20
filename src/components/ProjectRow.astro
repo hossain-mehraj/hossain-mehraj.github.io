@@ -1,0 +1,53 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+import ProjectIcon from './ProjectIcon.astro';
+
+interface Props { project: CollectionEntry<'projects'> }
+const p = Astro.props.project.data;
+---
+<li>
+  <a href={`/projects/${p.slug}/`} class="row">
+    <span class="thumb" transition:name={`thumb-${p.slug}`}>
+      {p.thumbnail
+        ? <Image src={p.thumbnail} alt="" width={96} height={96} layout="fixed" fit="cover" />
+        : <ProjectIcon name={p.icon} size={20} />}
+    </span>
+    <span class="text">
+      <span class="title">{p.title}</span>
+      <span class="summary">{p.summary}</span>
+    </span>
+    <span class="tags mono">{p.tags.slice(0, 2).join(' · ')}</span>
+  </a>
+</li>
+
+<style>
+  li { list-style: none; border-top: 1px solid var(--border); }
+  li:last-child { border-bottom: 1px solid var(--border); }
+  .row {
+    display: grid; grid-template-columns: 48px 1fr auto; align-items: center; gap: var(--s3);
+    padding: 10px var(--s2); margin-inline: calc(-1 * var(--s2));
+    color: var(--text); text-decoration: none; border-radius: 10px;
+    transition: background-color 0.2s;
+  }
+  .row:hover { background: var(--hover); }
+  .row:focus-visible { outline-offset: 0; }
+  .thumb {
+    width: 48px; height: 48px; border-radius: 7px; overflow: hidden; display: grid; place-items: center;
+    background: var(--hover);
+    transition: transform 0.3s var(--ease);
+  }
+  .thumb :global(img) { width: 100%; height: 100%; object-fit: cover; }
+  .thumb :global(.project-icon) { width: 100%; height: 100%; border: 0; border-radius: 0; background: transparent; color: var(--muted); }
+  .row:hover .thumb { transform: translateY(-2px); }
+  .text { display: flex; flex-direction: column; min-width: 0; }
+  .title { font-weight: 500; transition: color 0.2s; }
+  .row:hover .title { color: var(--accent); }
+  .summary { color: var(--muted); font-size: 0.875rem; line-height: 1.45; }
+  .tags { color: var(--muted); font-size: 0.75rem; white-space: nowrap; align-self: start; padding-top: 3px; }
+  @media (max-width: 560px) {
+    .row { grid-template-columns: 44px 1fr; }
+    .thumb { width: 44px; height: 44px; }
+    .tags { display: none; }
+  }
+</style>

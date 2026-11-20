@@ -1,7 +1,7 @@
 ---
 title: Clinic Staff Mobile App
 slug: clinic-app
-summary: A mobile app that replaced a clinic's paper patient-information binder.
+summary: "An app that replaced a clinic's paper patient binder."
 icon: smartphone
 tags: [App]
 role: "TODO: role (e.g. Sole developer)"

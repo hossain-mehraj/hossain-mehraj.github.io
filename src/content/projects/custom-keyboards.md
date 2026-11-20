@@ -1,8 +1,9 @@
 ---
 title: Custom Mechanical Keyboards
 slug: custom-keyboards
-summary: My keyboard business. 22 client builds since 2022, including CNC-machined cases I design.
+summary: "My keyboard business: 22 client builds since 2022."
 icon: keyboard
+thumbnail: ../../assets/projects/custom-keyboards/kb-75.jpg
 tags: [Business, CAD, Electronics]
 role: Founder and builder
 dates: Dec 2022 – present
