@@ -1,10 +1,10 @@
 ---
 title: Custom Mechanical Keyboards
 slug: custom-keyboards
-summary: "My keyboard business: 22 builds, switches tuned per client."
+summary: "My keyboard business: 22 builds, with cases I design in CAD."
 icon: keyboard
 thumbnail: ../../assets/projects/custom-keyboards/thumb.jpg
-tags: [Business, Materials, CAD]
+tags: [CAD, Business, Materials]
 role: Founder and builder
 dates: Dec 2022 – present
 featured: true
@@ -25,7 +25,6 @@ I run a small business building custom mechanical keyboards for clients. Each bu
 
 Most of the work is in the switches and the mounting. The same keycaps can sound deep and muted or bright and clacky depending on which plastics the switch is made from, how it's lubricated, what spring is inside, and how the plate is held in the case. I learned the material science behind those choices from the keyboard community's write-ups, and I use it to hit a specific sound and feel for each client.
 
-<!-- TODO: add a sentence on how clients find you (word of mouth, Instagram, Reddit, etc.) and any business numbers you're happy to share. -->
 
 ## Problem / Goal
 
@@ -125,7 +124,6 @@ I designed this case in Onshape, and it was CNC-machined in aluminum through PCB
 
 22 client keyboards built since December 2022, from tenkeyless boards down to 60% layouts, each with switches, mounting, and foam chosen for that client. One was a custom aluminum case designed and machined for a client build.
 
-<!-- TODO: add any client feedback, repeat customers, or revenue figures you're comfortable publishing. -->
 
 ## What I learned
 
