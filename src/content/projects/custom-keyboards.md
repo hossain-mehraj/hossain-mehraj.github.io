@@ -23,7 +23,7 @@ links: {}
 
 I've been building keyboards for people since December 2022. Twenty-two so far. Most clients come to me with a sound or a feel in mind rather than a parts list, and my job is to turn that into a board: the case, the switches, and how everything is mounted.
 
-## Problem / Goal
+## The goal
 
 "I want it to sound deep" or "I want it to feel light" isn't something you can order off a shelf. Every build starts by pinning down what the client actually means, then working backwards to the parts that will get there.
 
@@ -91,7 +91,7 @@ Stock switches rarely land exactly where a client wants, so I take them apart an
 ![White 65 percent keyboard with pink and white keycaps](../../assets/projects/custom-keyboards/kb-65.jpg "65% build.")
 ![White 60 percent keyboard with white and yellow keycaps](../../assets/projects/custom-keyboards/kb-60.jpg "60% build, O-ring mounted.")
 
-## Results / Impact
+## Results
 
 Twenty-two boards since December 2022, from tenkeyless down to 60%, several with custom aluminum cases I designed in CAD. No boards have come back.
 

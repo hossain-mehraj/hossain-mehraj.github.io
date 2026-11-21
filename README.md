@@ -46,10 +46,10 @@ draft: false                    # true hides it from the site
 ---
 
 ## Overview
-## Problem / Goal
+## The goal
 ## What I did
 ## Process
-## Results / Impact
+## Results
 ## What I learned
 ```
 
