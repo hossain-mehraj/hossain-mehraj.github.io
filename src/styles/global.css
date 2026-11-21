@@ -151,3 +151,8 @@ p { margin: 0 0 var(--s3); }
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
   ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; }
 }
+
+/* Sub/superscripts (C_d, CO₂, m²) without stretching the line height. */
+sub, sup { font-size: 0.72em; line-height: 0; position: relative; vertical-align: baseline; }
+sub { bottom: -0.25em; }
+sup { top: -0.5em; }
