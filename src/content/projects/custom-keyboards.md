@@ -38,14 +38,14 @@ I've been building keyboards for people since December 2022. Twenty-two so far. 
 
 ### Case design
 
-I've designed cases for several builds. One example:
+I've designed cases for several builds. One example, with a soft, even feel and room for an optional brass weight:
 
-**Goal:** a soft, even-feeling board that opens up easily and has room for an optional brass weight.
-
-**How I got there:** I modelled the case in Onshape around an O-ring mount. The plate and PCB sit in a rubber O-ring pressed against the case walls, so no screws go through the plate and every key feels the same. Because the assembly floats, I moved the USB port onto a small daughterboard screwed into its own pocket, wired to the PCB through a milled channel, so plugging in a cable doesn't load the PCB. The brass weight (about three times denser than aluminum) gets a separate pocket with two screws, so it's optional. The case was CNC-machined in aluminum through PCBWay.
-
-![CAD model of a keyboard case seen from below, with a brass weight in the base and a USB opening at the back](../../assets/projects/custom-keyboards/kb-cad-iso.png "Case from below, with the optional brass weight in gold.")
+![CAD model of a keyboard case seen from below, with a brass weight in the base and a USB opening at the back](../../assets/projects/custom-keyboards/kb-cad-iso.png "Case from below, with the optional brass weight in gold. Brass is about three times denser than aluminum.")
 ![CAD view of the case showing the daughterboard pocket, cable channel, and brass weight with two screws](../../assets/projects/custom-keyboards/kb-cad-inside.png "Daughterboard pocket and cable channel.")
+
+- **O-ring mount.** The plate and PCB sit in a rubber O-ring pressed against the case walls. No screws go through the plate, so every key feels the same.
+- **USB daughterboard.** Because the assembly floats, the port sits on its own board in a screwed-down pocket, so plugging in a cable doesn't load the PCB.
+- **Optional weight.** The brass weight has its own pocket and two screws. The case was CNC-machined in aluminum through PCBWay.
 
 ![Corner of a keyboard showing a blue O-ring between the plate assembly and the case wall](../../assets/projects/custom-keyboards/kb-oring.jpg "The O-ring holding the assembly in a finished build.")
 ![Opened keyboard case with the USB daughterboard and its cable connected to the PCB](../../assets/projects/custom-keyboards/kb-open.jpg "Daughterboard in place, cabled to the PCB.")
@@ -81,9 +81,7 @@ Stock switches rarely land exactly where a client wants, so I take them apart an
 
 ### Mounting
 
-**Goal:** match how the board feels under your fingers to the brief.
-
-**How I get there:** for clients who want something firm and precise, I use a top mount, with the plate screwed straight into the case. For a softer, bouncier board with a more even sound, I use an O-ring or a gasket mount, where the plate floats on rubber or foam strips instead of being bolted down.
+Top mount (plate screwed straight to the case) for clients who want firm and precise. O-ring or gasket mount (plate floating on rubber or foam) for a softer, bouncier board with a more even sound.
 
 ### Builds
 

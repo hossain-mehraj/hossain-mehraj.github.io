@@ -77,18 +77,18 @@ We built one deliberately simple car and studied it before designing the real on
 
 ### Iterations: first race car to final car
 
+![CAD render of the first front wing with a high-downforce profile](../../assets/projects/stem-racing/front-wing-v1.jpg "Front wing, first race.")
+![CAD render of the final front wing with refined endplates](../../assets/projects/stem-racing/front-wing-v3.jpg "Front wing, Nationals.")
+
+![CAD model of the first body iteration](../../assets/projects/stem-racing/sr-cad-body-c.jpg "Body, first race.")
+![CAD model of the final body iteration](../../assets/projects/stem-racing/sr-cad-body-a.jpg "Body, Nationals.")
+
 - **Front wing.** From a high-downforce profile to a neutral one, with endplates reshaped to push wheel wake around the tyres instead of under the floor.
 - **Rear wing.** From a flat plate to a supported wing tuned for downforce against drag.
 - **Sidepods.** Aggressive scoops separated at their sharp edges and were hard to machine, so the final version is a smooth taper that keeps flow attached.
 - **Body.** A trimmed nose cut frontal area, and fully rounded edges gave a teardrop shape with a small wake. I checked every surface with zebra striping before meshing.
 
 Under identical conditions, drag fell from **0.45 N to 0.229 N**.
-
-![CAD render of the first front wing with a high-downforce profile](../../assets/projects/stem-racing/front-wing-v1.jpg "Front wing, first race.")
-![CAD render of the final front wing with refined endplates](../../assets/projects/stem-racing/front-wing-v3.jpg "Front wing, Nationals.")
-
-![CAD model of the first body iteration](../../assets/projects/stem-racing/sr-cad-body-c.jpg "Body, first race.")
-![CAD model of the final body iteration](../../assets/projects/stem-racing/sr-cad-body-a.jpg "Body, Nationals.")
 
 ![Top-view velocity field around the final car](../../assets/projects/stem-racing/sr-cfd-final-top.jpg "Final car from above. The front-wing outwash steers flow around the wheels.")
 
@@ -121,7 +121,7 @@ Four cars across the season, ending with two matched cars for Nationals. Simulat
 
 | Issue | What happened | Next time |
 | --- | --- | --- |
-| First design had twice the drag | Drawn before we had studied the flow. | Run a baseline flow study before committing to a design. |
+| First design had twice the drag | Drawn before we had studied the flow. CFD later traced its 0.45 N to a blunt nose, wheel wake under the floor, and a separating diffuser. | Run a baseline flow study before committing to a design. |
 | Sidepod scoops separated | Sharp edges caused separation and were hard to machine consistently. | Check machinability alongside each CFD result. |
 | Through-axle added drag | Clearance channels added frontal area and setup time. | Design wheel mounting together with the body. |
 | 5-axis failed on foam | Clamping distorted the foam, so parts varied more, not less. | Cut a test piece in the real material before committing to a process. |
@@ -131,94 +131,71 @@ Four cars across the season, ending with two matched cars for Nationals. Simulat
 
 ## Overview
 
-STEM Racing is judged on more than lap times. Teams also submit an enterprise portfolio, a verbal presentation, and a pit display, and are scored on project management, sponsorship, and brand. This is the business side of Team Lux's season: how we funded, scheduled, and ran a team that started two weeks behind everyone else.
+STEM Racing is judged on more than lap times: teams also submit an enterprise portfolio, a presentation, and a pit display, scored on project management, sponsorship, and brand. This is how we funded, scheduled, and ran a team that started two weeks behind everyone else.
 
 The car itself is under [Engineering](#engineering).
 
 ## The goal
 
-We were invited two weeks before Regionals, so every other team had a head start. The project had to be planned so that six members and three helpers could work in parallel without waiting on each other. We also had to fund a season of about $11,900 from nothing.
-
-The charter set the deliverables up front: two track-ready cars, two 10-page portfolios, a 10-minute presentation, and a zero-waste pit display.
+Plan the season so six members and three helpers could work in parallel without waiting on each other, and fund about $11,900 from nothing. The charter fixed the deliverables: two track-ready cars, two 10-page portfolios, a 10-minute presentation, and a zero-waste pit display.
 
 ## What I did
 
-- Ran the team's operations: the project charters, work breakdown, schedule, risk register, and budget.
-- Built the sponsorship outreach system and handled a large share of the sponsor contact myself.
-- Kept the stakeholder register and the milestone check-ins with every sponsor.
+- Ran operations: project charters, work breakdown, schedule, risk register, and budget.
+- Built the sponsorship outreach system and handled a large share of sponsor contact myself.
+- Kept the stakeholder register and milestone check-ins with every sponsor.
 
 ## Process
 
-### Charter, scope, and work breakdown
+### Planning: scope, schedule, owners
 
-We wrote a project charter in November and a second one after qualifying, when the targets changed. The scope covered the car, both portfolios, the pit display, the presentation, branding, and sponsorship. Anything outside that list was cut.
-
-The work was split into four streams: Car Development, Enterprise, Branding, and Competition. Each stream was broken into tasks, and each task had an owner and acceptance criteria, such as rule compliance for the car and clarity for the portfolios.
+Four work streams (Car Development, Enterprise, Branding, Competition), each broken into tasks with an owner and acceptance criteria. A shared Gantt chart ran from November to Nationals, with Regionals and Test Day as checkpoints, and a RACI matrix gave every deliverable exactly one accountable owner. Weekly one-hour meetings and written status reports kept everyone on the same plan.
 
 ![Work breakdown structure: Team Lux project split into Car Development, Enterprise, Branding and Competition, each with three tasks](../../assets/projects/stem-racing/work-breakdown.jpg "Work breakdown structure.")
 
-### Schedule and accountability
-
-A shared Gantt chart ran from early November to Nationals in April. Regionals and Test Day were the checkpoints where we compared progress to plan and re-ordered tasks. A RACI matrix gave every deliverable exactly one accountable owner.
-
 ![Gantt chart with eight phases from research and planning in November to final preparation in April](../../assets/projects/stem-racing/gantt.jpg "Season timeline: four cars across eight phases.")
-
-![RACI matrix assigning responsible, accountable, consulted and informed roles for each deliverable](../../assets/projects/stem-racing/raci-matrix.png "RACI matrix by role.")
-![Five-step development loop: research, development and simulation, industry expert consultation, manufacturing and testing, data feedback](../../assets/projects/stem-racing/development-loop.jpg "Our development loop, with an industry review before every build.")
-
-### Communication
-
-We held weekly one-hour meetings at school, with attendance tracked. Between meetings we used a group chat and calls for quick updates, and longer in-person sessions for big pushes. Setbacks were worked through around a physical board until there was a way around them. Written status reports kept completed, in-progress, and planned work visible to everyone, along with current issues.
-
-![Status report listing complete tasks, tasks in progress, planned tasks, current issues and questions for discussion](../../assets/projects/stem-racing/status-report.png "A mid-season status report.")
+![RACI matrix assigning responsible, accountable, consulted and informed roles for each deliverable](../../assets/projects/stem-racing/raci-matrix.png "RACI matrix: one accountable owner per deliverable.")
 
 ### Risk register
 
-Nine risks were rated by likelihood and impact, and the highest were handled first. Manufacturing delays and damage to the final car both rated 8, so we started machining early, kept buffer time, and built duplicate cars and spare parts.
+Nine risks rated by likelihood and impact. The top two, manufacturing delays and damage to the final car, both rated 8, so we started machining early, kept buffer time, and built duplicate cars and spare parts.
+
+It was tested once: a rules mix-up ruined a regulation foam block with no spare in stock. Our title sponsor, GH Precision, sourced a replacement the same day, and we were cutting again within hours.
 
 ![Risk register table of nine risks with ratings from 5 to 8 and preventative measures](../../assets/projects/stem-racing/risk-register.jpg "Risk register.")
 
-The plan was tested once. A rules mix-up during machining ruined a regulation foam block and stopped production with no spare in stock. Our title sponsor, GH Precision, drove out to source a replacement the same day, and we were cutting again within hours.
+### Sponsorship: offering value, not asking for money
 
-### Sponsorship: from asking for money to offering value
+- **Outreach.** 1,000+ companies split across the team: cold call, follow-up, sponsorship package, then regular contact.
+- **In-kind first.** Many companies couldn't give money but could give machining, printing, or expertise, which cut our projected cash budget from over $14,000 to about $2,000.
+- **Return for sponsors.** Placement on the car, jerseys, and pit display, plus social posts and website visibility.
 
-We started with one goal: funding. We soon learned that companies respond to value, not requests, so we pitched Team Lux as a platform sponsors could grow alongside.
-
-- **Outreach system.** A list of more than 1,000 local and national companies was split across the team and colour-coded. The process ran cold call, follow-up call, sponsorship package, and then regular contact.
-- **Multi-channel.** We used calls, tracked email proposals with our website and package attached, a sponsorship page on the website, Instagram, and personal networks.
-- **In-kind first.** Many companies couldn't give money but could give materials, machining, printing, or expertise. Prioritising in-kind support cut our projected cash budget sharply.
-- **Return for sponsors.** Sponsors got brand placement on the car, jerseys, and pit display, plus social posts, website visibility, and recognition at events.
-- **Stakeholder register.** Every sponsor who signed on was logged with the last contact, who on the team owned the relationship, and how they preferred to be reached. We checked in with each one at milestones.
-
-The result was $4,000 in cash and $7,600 of in-kind CNC machining and 3D printing from more than 15 sponsors, plus software and CFD mentorship.
+The result: $4,000 in cash and $7,600 in kind from more than 15 sponsors, plus software and CFD mentorship.
 
 ![Bar chart: projected project cost of over 14,000 dollars before in-kind sponsorship and about 2,000 dollars after](../../assets/projects/stem-racing/in-kind-impact.jpg "Projected cost before and after in-kind sponsorship.")
 ![Team Lux sponsorship package, website sponsor tiers and Instagram sponsor posts on laptop and phone mockups](../../assets/projects/stem-racing/sponsorship-materials.jpg "Sponsorship package, website tiers, and sponsor posts.")
 
-### Brand and marketing
+### Brand
 
-The name comes from our school motto, *Lux numquam desit* ("the light will never fail"), and from the Port Credit lighthouse. The logo combines the lighthouse with the motion of the F1 mark. The palette is black and gold: light shining through darkness.
-
-Online, we built a verified Instagram account with 300+ followers, used polls and Q&As to see what content worked, and promoted every sponsor. Offline, we put up posters at school, appeared in the school newsletter, and left printed slips in libraries and recreation centres.
+The name comes from our school motto, *Lux numquam desit* ("the light will never fail"), and the Port Credit lighthouse; the palette is black and gold. We grew a verified Instagram to 300+ followers and promoted every sponsor there.
 
 ![Team Lux colour palette: black 000000, gold B6995B, light gold E1DA86](../../assets/projects/stem-racing/colour-palette.jpg "Colour palette.")
 ![Team Lux Instagram profile, insights showing 13.2k views, website and posts on device mockups](../../assets/projects/stem-racing/digital-marketing.jpg "Instagram, website, and reach.")
-![School newsletter feature and Team Lux Nationals poster](../../assets/projects/stem-racing/print-promotion.jpg "Newsletter feature and poster.")
 
 ## Results
 
-At the 2026 National Championships we placed **1st in Pit Display**, **2nd in Project Management**, and **3rd in Brand Identity**, and **4th overall**. Every deliverable was on time, and four cars were built across the season. The pit display was zero-waste, built from repurposed workshop materials. The lighthouse at the back is a model I designed and 3D printed.
+At the 2026 National Championships: **1st in Pit Display**, **2nd in Project Management**, **3rd in Brand Identity**, and **4th overall**. Every deliverable was on time. The zero-waste pit display was built from repurposed workshop materials, and the lighthouse at the back is a model I designed and 3D printed.
 
 ![Plaque reading 2026 National Championships Best Pit Display](../../assets/projects/stem-racing/sr-plaque.jpg "Best Pit Display, 2026.")
 ![Team Lux pit display with design panels and a lighthouse model](../../assets/projects/stem-racing/sr-pit.jpg "The pit display, with the printed lighthouse at back left.")
 
 ## What I learned
 
-> On a short timeline the plan has to be visible. A register and a chart that everyone can see let people pick up the next task without asking, and the top-rated risks got attention while there was still time to act.
+On a short timeline the plan has to be visible: a chart everyone can see lets people pick up the next task without asking.
 
 | Area | What happened | Next time |
 | --- | --- | --- |
-| Ruined block, no spare | A rules mix-up during machining ruined a regulation block with no spare in stock, and production stopped until a sponsor sourced a replacement. | Keep at least one spare block on hand, and check each setup against the rules before cutting. |
-| Compressed timeline | The schedule tightened in the final stages, leaving little buffer between testing and final production. | Build more buffer between milestones and start final preparation earlier. |
-| Communication gaps | Scheduling conflicts cut full-team meetings, and updates slipped in busy periods. | More structured check-ins and a single shared place for status. |
-| Local reach | Marketing reached mostly our school and community. | Expand to more platforms and target a broader audience. |
+| Ruined block, no spare | Production stopped until a sponsor sourced a replacement. | Keep a spare block, and check each setup against the rules before cutting. |
+| Compressed timeline | Little buffer was left between testing and final production. | More buffer between milestones; start final prep earlier. |
+| Communication gaps | Scheduling conflicts cut full-team meetings in busy periods. | Structured check-ins and one shared place for status. |
+| Local reach | Marketing reached mostly our school and community. | Expand to more platforms and a broader audience. |
