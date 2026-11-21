@@ -7,5 +7,5 @@ export const SITE = {
   email: 'mehraj.hossain@outlook.com',
   linkedin: 'https://www.linkedin.com/in/mehrajhossain',
   github: 'https://github.com/hossain-mehraj',
-  resume: '/resume.pdf',
+  resume: '/Mehraj_Hossain_Resume.pdf',
 };

@@ -75,7 +75,7 @@ One-time setup: GitHub → repo **Settings → Pages → Build and deployment �
 
 | Path | What |
 | --- | --- |
-| `src/site.ts` | Name, tagline, email, LinkedIn, GitHub, résumé path |
+| `src/site.ts` | Name, tagline, email, LinkedIn, GitHub, resume path |
 | `src/pages/index.astro` | Home page (bio text is here) |
 | `src/pages/about.astro` | About page: bio, skills, experience |
 | `src/content/projects/` | One Markdown file per project |
@@ -83,7 +83,7 @@ One-time setup: GitHub → repo **Settings → Pages → Build and deployment �
 | `src/styles/global.css` | Colours, fonts, spacing (CSS variables at the top) |
 | `src/layouts/Base.astro` | `<head>`, SEO/Open Graph tags, header, footer, page transitions |
 | `src/pages/projects/[slug].astro` | Project page template |
-| `public/` | Files served as-is: `favicon.svg`, `resume.pdf`, `robots.txt` |
+| `public/` | Files served as-is: `favicon.svg`, `Mehraj_Hossain_Resume.pdf`, `robots.txt` |
 
 ## Engineering drawings
 
