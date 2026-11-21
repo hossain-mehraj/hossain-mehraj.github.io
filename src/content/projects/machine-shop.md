@@ -22,13 +22,11 @@ links: {}
 
 ## Overview
 
-Three years of shop work, and the same rule every time: nothing gets cut until it's modelled in CAD and has a full drawing. Every part on this page, from a pen to a six-part chair, was modelled in Onshape, drawn with views, dimensions, callouts, tolerances, and material, and then machined from that drawing on the manual lathe, the manual mill, or a CNC mill programmed in Mastercam.
+Three years of shop work with one rule: nothing gets cut until it's modelled in CAD and has a full drawing. Every part here was drawn in Onshape, then machined from that drawing on a manual lathe, a manual mill, or a CNC mill programmed in Mastercam. Three builds in detail (a pen, its box, and a tic-tac-toe set), then more drawings and self-directed CAD.
 
-This page covers three builds in detail (a pen, its box, and a tic-tac-toe set), then the rest of the drawings and some self-directed CAD.
+## The goal
 
-## Problem / Goal
-
-A drawing is the contract between design and manufacturing. If a dimension is missing, the machinist has to guess, even when the machinist is me. The goal was drawings complete enough to machine from without asking questions, and parts that fit each other the first time.
+Drawings complete enough to machine from without asking questions, and parts that fit each other the first time.
 
 ## What I did
 
@@ -57,7 +55,6 @@ The pen is an aluminum barrel with a brass tip and a brass end cap, all turned o
 ![The assembled pen: aluminum barrel with brass tip and brass end cap](../../assets/projects/machine-shop/pen-assembled.jpg "Assembled.")
 ![The pen taken apart: brass tip, aluminum barrel, brass cap](../../assets/projects/machine-shop/pen-exploded.jpg "Tip, barrel, and cap.")
 
-![Close-up of the tapped internal thread in the end of the barrel](../../assets/projects/machine-shop/pen-thread.jpg "Tapped barrel end.")
 ![Brass end cap with a domed head and threaded shank](../../assets/projects/machine-shop/pen-cap.jpg "End cap.")
 ![Brass tip with grip grooves, taper, and threaded shank](../../assets/projects/machine-shop/pen-tip.jpg "Tip with grip grooves.")
 
@@ -78,7 +75,6 @@ The base and lid are each milled from solid aluminum. The base has a two-level p
 
 ![The closed box showing the CNC-engraved lid](../../assets/projects/machine-shop/box-lid.jpg "CNC-engraved lid.")
 ![The open, empty box showing the stepped pocket](../../assets/projects/machine-shop/box-open.jpg "Two-level pocket.")
-![End view of the closed box showing the hinge screw hole and flush lid](../../assets/projects/machine-shop/box-end.jpg "End view: lid sits flush.")
 
 ![Close-up of a rounded hinge post on the base](../../assets/projects/machine-shop/box-hinge.jpg "Filleted hinge post on the base.")
 ![Lid, base, and the two hinge screws laid out](../../assets/projects/machine-shop/box-parts.jpg "Lid, base, and hinge screws.")
@@ -100,7 +96,6 @@ This was my first project that needed parts to fit each other. The board is one 
 
 ![The board mid-game with brass and aluminum pegs standing in the grid](../../assets/projects/machine-shop/ttt-game.jpg "Mid-game.")
 ![The board with its ten pegs laid out beside it](../../assets/projects/machine-shop/ttt-layout.jpg "Board and pegs.")
-![Top view of the board and pegs](../../assets/projects/machine-shop/ttt-top.jpg "Top view.")
 
 ### More drawings
 
@@ -123,7 +118,7 @@ This was my first project that needed parts to fit each other. The board is one 
 ![CAD model of a wind turbine with helical blades](../../assets/projects/machine-shop/cad-turbine.png "Helical-blade turbine.")
 ![CAD model of an AC generator with two magnets, a coil, and a shaft](../../assets/projects/machine-shop/cad-generator.png "AC generator.")
 
-## Results / Impact
+## Results
 
 Every part was machined from its drawing. The pen comes apart for refills, the box opens and closes on its built-in hinge with the lid sitting flush, and any peg fits any hole on the board. A few things didn't come out the way I drew them, listed below.
 
