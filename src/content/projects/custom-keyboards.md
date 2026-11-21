@@ -57,44 +57,25 @@ Stock switches rarely land exactly where a client wants, so I take them apart an
 
 #### Frankenswitch: the Zaku-Y
 
-The Zaku-Y is a Zaku (Tecsee) and a Gateron Milky Yellow combined into one switch.
+**Goal:** the deeper sound of a Gateron Milky Yellow with the firmer, snappier feel of a Zaku.
 
-**Goal:** the deeper, softer sound of the Milky Yellow with the firmer bottom-out and quicker return of the Zaku.
+![Two switches on a desk among switch-modding tools: a Zaku on the left and a Milky Yellow on the right](../../assets/projects/custom-keyboards/franken-01-donors.jpg "The two donor switches.")
 
-| Part | Zaku | Milky Yellow | Used in the Zaku-Y |
-| --- | --- | --- | --- |
-| Top housing | Polycarbonate (PC) | Nylon (PA66) | Milky Yellow |
-| Bottom housing | Nylon | Nylon (PA66) | Milky Yellow |
-| Stem | POM, longer centre pole | POM | Zaku |
-| Spring | Stainless, double-stage, 63.5 g bottom-out | Stainless, single-stage, 62 g bottom-out | Zaku |
+![Both switches disassembled in two rows: bottom housing, top housing, stem and spring](../../assets/projects/custom-keyboards/franken-02-teardown.jpg "Both apart: Zaku on top, Milky Yellow below.")
 
-![Two switches on a desk among switch-modding tools: a Zaku with a white stem on the left and a Milky Yellow with a yellow stem on the right](../../assets/projects/custom-keyboards/franken-01-donors.jpg "The donor switches: Zaku on the left, Milky Yellow on the right.")
+![Two top housings: a translucent milky nylon housing on the left and a white polycarbonate housing on the right](../../assets/projects/custom-keyboards/franken-03-housings.jpg "Housings: Milky Yellow. The housing rings when the stem hits it. Nylon is semi-crystalline and damps vibration, so it sounds lower than the Zaku's stiff, glassy polycarbonate. I kept both halves of the matched pair for a tighter fit.")
 
-![Both switches fully disassembled in two rows, each row showing bottom housing, top housing, stem and spring](../../assets/projects/custom-keyboards/franken-02-teardown.jpg "Both switches apart: Zaku on top, Milky Yellow below. Left to right: bottom housing, top housing, stem, spring.")
+![Two stems: a yellow POM stem on the left and a white POM stem with a longer centre pole on the right](../../assets/projects/custom-keyboards/franken-04-stems.jpg "Stem: Zaku. Both are low-friction POM, but the Zaku's longer pole bottoms out earlier for a shorter, firmer stop.")
 
-**Housings: Milky Yellow.** The housing is what rings when the stem hits it, so its material sets the pitch. The Zaku's top is polycarbonate, an amorphous, glassy plastic that is stiff and has little internal damping, so it rings bright. The Milky Yellow's top is PA66 nylon, which is semi-crystalline and absorbs a little moisture, so it damps vibration and sounds lower. I kept both Milky Yellow halves rather than mixing housings, because a matched pair from the same mould fits tighter and wobbles less.
+![Two springs: a shorter single-stage spring on the left and a longer double-stage spring on the right](../../assets/projects/custom-keyboards/franken-05-springs.jpg "Spring: Zaku. The stiffer second stage (63.5 g at the bottom) slows the stem before it bottoms out and speeds up the return.")
 
-![Two top housings side by side: a translucent milky housing on the left and a solid white housing on the right](../../assets/projects/custom-keyboards/franken-03-housings.jpg "Top housings: Milky Yellow nylon on the left (kept), Zaku polycarbonate on the right.")
-
-**Stem: Zaku.** Both stems are POM, which is slippery and wear-resistant, so either runs smoothly in nylon. The difference is length: the Zaku's longer centre pole bottoms out on the housing slightly earlier, giving shorter travel and a firm, defined stop. In a nylon housing that stop stays low-pitched instead of clacky.
-
-![Two switch stems side by side: a yellow stem on the left and a white stem with a longer centre pole on the right](../../assets/projects/custom-keyboards/franken-04-stems.jpg "Stems: Milky Yellow on the left, Zaku on the right (kept), with the longer pole.")
-
-**Spring: Zaku.** The Zaku's stainless double-stage spring is light at the start of the press, then stiffer near the bottom. The stiffer stage slows the stem before it hits the housing and stores more energy for the return stroke, so the key comes back up faster.
-
-![Two springs side by side: a shorter single-stage spring on the left and a longer double-stage spring on the right](../../assets/projects/custom-keyboards/franken-05-springs.jpg "Springs: Milky Yellow on the left, Zaku double-stage on the right (kept). The tighter coils mark where the rate changes.")
-
-**Film.** A thin film between the housing halves takes up the small gap between them, so the top can't wobble or rattle. A rattling housing sounds hollow and varies from key to key.
-
-![Placing a thin clear switch film onto the Milky Yellow bottom housing with tweezers](../../assets/projects/custom-keyboards/franken-06-film.jpg "Placing the film on the Milky Yellow bottom housing.")
+![Placing a thin clear switch film onto the Milky Yellow bottom housing with tweezers](../../assets/projects/custom-keyboards/franken-06-film.jpg "A film between the housings takes out the wobble that makes switches rattle.")
 ![The Milky Yellow bottom housing on a switch opener with the film seated around its edge](../../assets/projects/custom-keyboards/franken-07-film-seated.jpg "Film seated.")
 
-**Lube and assembly.** A thin coat of lube on the stem rails and spring smooths the travel and stops spring ping. Then the Zaku spring and stem go into the Milky Yellow bottom, and the Milky Yellow top closes over them.
-
-![The Zaku stem and spring being lowered into the Milky Yellow bottom housing on a switch opener](../../assets/projects/custom-keyboards/franken-08-stem-spring.jpg "Zaku stem and spring going into the Milky Yellow bottom.")
+![The Zaku stem and spring being lowered into the Milky Yellow bottom housing on a switch opener](../../assets/projects/custom-keyboards/franken-08-stem-spring.jpg "Lubed Zaku stem and spring into the Milky Yellow bottom.")
 ![The finished Zaku-Y on the opener with the Milky Yellow top housing closed over the Zaku stem](../../assets/projects/custom-keyboards/franken-09-finished.jpg "The finished Zaku-Y.")
 
-**Result:** the Milky Yellow's lower, softer sound, with the Zaku's firmer bottom-out and quicker return.
+**Result:** the Milky Yellow's lower, softer sound with the Zaku's firmer bottom-out and quicker return.
 
 ### Mounting
 
