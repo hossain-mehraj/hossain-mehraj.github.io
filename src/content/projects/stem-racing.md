@@ -52,7 +52,7 @@ This tab covers the car. The business side (sponsorship, budget, project managem
 
 In a tightly regulated specification series, performance comes from marginal gains. We had almost no track time, so the car had to be developed in simulation, with every change justified by first principles and checked in CFD before it was machined.
 
-The targets were quantifiable from the start: drag coefficient (C_d), frontal area, rolling resistance, and the moment arm between the centre of mass and the centre of pressure.
+The targets were quantifiable from the start: drag coefficient (C<sub>d</sub>), frontal area, rolling resistance, and the moment arm between the centre of mass and the centre of pressure.
 
 ## What I did
 
@@ -82,11 +82,11 @@ I simplified each new geometry and screened it in Ansys Discovery's real-time so
 ![Half of the car enclosed in a rectangular fluid domain](../../assets/projects/stem-racing/sr-cfd-domain.jpg "Half-car model inside the fluid domain.")
 ![Polyhedral mesh of the fluid domain, finer near the car](../../assets/projects/stem-racing/sr-cfd-mesh.jpg "Mesh, refined near the car surface and wheels.")
 
-![Simplified car in the fluid domain with arrows marking the freestream, moving floor, CO2 jet and wheel rotation](../../assets/projects/stem-racing/cfd-boundary-conditions.jpg "Boundary conditions: freestream, moving floor, CO₂ jet, and rotating wheels.")
+![Simplified car in the fluid domain with arrows marking the freestream, moving floor, CO₂ jet and wheel rotation](../../assets/projects/stem-racing/cfd-boundary-conditions.jpg "Boundary conditions: freestream, moving floor, CO₂ jet, and rotating wheels.")
 
 ### Baseline concept: finding where the energy went
 
-Instead of drawing several unrelated concepts, we built one deliberately simple baseline car and studied it closely. It made **0.64 N of drag (C_d = 0.167)** and **0.52 N of downforce (C_l = 0.135)**, and it showed four problems:
+Instead of drawing several unrelated concepts, we built one deliberately simple baseline car and studied it closely. It made **0.64 N of drag (C<sub>d</sub> = 0.167)** and **0.52 N of downforce (C<sub>l</sub> = 0.135)**, and it showed four problems:
 
 1. The front wing made strong suction but lost energy at the sharp junctions between wing, endplate, and support.
 2. Wake from the front wheels was being drawn under the floor.
@@ -117,7 +117,7 @@ The design actions followed directly: reprofile the wing supports, use outwash a
 ![CAD render of the second rear wing with a support structure](../../assets/projects/stem-racing/rear-wing-v2.jpg "Rear wing 2: first support structure.")
 
 ![CAD render of the box-section rear wing used at test day](../../assets/projects/stem-racing/rear-wing-v3.jpg "Rear wing 3: Test Day.")
-![CAD render of the final curved rear wing around the CO2 cartridge](../../assets/projects/stem-racing/rear-wing-v4.jpg "Rear wing 4: Nationals.")
+![CAD render of the final curved rear wing around the CO₂ cartridge](../../assets/projects/stem-racing/rear-wing-v4.jpg "Rear wing 4: Nationals.")
 
 ### Body and sidepods: three of each
 
@@ -158,7 +158,7 @@ For printed parts I tested PLA and PETG for form studies, SLA resin for low-fric
 > **Why this way:** With a limited supply of regulation blocks, a reliable process mattered more than fewer setups. When every car is the same shape, a faster run means the design improved, not the machining.
 
 ![CNC router machining three foam car bodies, each from its own block](../../assets/projects/stem-racing/sr-cnc-a.jpg "Three bodies in one run, each cut from its own regulation block.")
-![Close-up of a machined foam body showing the CO2 cartridge bore](../../assets/projects/stem-racing/sr-cnc-close.jpg "Machined body and cartridge bore before finishing.")
+![Close-up of a machined foam body showing the CO₂ cartridge bore](../../assets/projects/stem-racing/sr-cnc-close.jpg "Machined body and cartridge bore before finishing.")
 
 ## Results / Impact
 
