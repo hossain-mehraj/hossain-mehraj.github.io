@@ -75,6 +75,8 @@ Stock switches rarely land exactly where a client wants, so I take them apart an
 ![The Zaku stem and spring being lowered into the Milky Yellow bottom housing on a switch opener](../../assets/projects/custom-keyboards/franken-08-stem-spring.jpg "Lubed Zaku stem and spring into the Milky Yellow bottom.")
 ![The Milky Yellow top housing being lowered onto the Zaku stem on the switch opener](../../assets/projects/custom-keyboards/franken-09-closing.jpg "Closing the Milky Yellow top housing over the Zaku stem.")
 
+![The finished Zaku-Y switch, fully closed, sitting on a copper-coloured keyboard plate](../../assets/projects/custom-keyboards/franken-10-finished.jpg "The finished Zaku-Y.")
+
 **Result:** the Milky Yellow's lower, softer sound with the Zaku's firmer bottom-out and quicker return.
 
 ### Mounting
