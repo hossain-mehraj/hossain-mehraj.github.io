@@ -51,11 +51,18 @@ I've been building keyboards for people since December 2022. Twenty-two so far. 
 
 ### Switches
 
-Stock switches rarely land exactly where a client wants, so I mix parts from different switches (frankenswitching) and tune from there. Two briefs come up the most.
+A switch comes apart into four pieces: a top housing, a bottom housing, a stem, and a spring. A frankenswitch is just a switch put back together from pieces of different switches. The most famous one is the Holy Panda, which is Halo stems dropped into Invyr Panda housings. Nobody sold it, people built it.
+
+![A disassembled tactile MX-style switch: top housing, bottom housing, stem and spring laid out separately](../../assets/projects/custom-keyboards/switch-parts-tactile.jpg "The four parts I mix and match. Photo: Multicherry, CC BY-SA 4.0.")
+![An opened linear MX-style switch with its stem, spring and both housings](../../assets/projects/custom-keyboards/switch-parts-linear.jpg "A linear switch opened up for lubing and filming. Photo: Dmitriy Nosachev, CC BY-SA 4.0.")
+
+Two briefs come up the most:
 
 **Goal: deep and quiet.** **How I get there:** a softer bottom housing to take the edge off each keypress, a smooth stem so nothing scratches, and a thin film between the housings so they don't rattle. Then a light coat of lube on the stem and housing rails, and a spring heavy enough that the bottom-out isn't harsh.
 
-**Goal: light and snappy.** **How I get there:** a stiffer housing for a crisper sound, a lighter spring so the keys don't tire your fingers, and less lube so the switch stays fast. For tactile switches I keep lube off the legs, or the bump goes mushy.
+**Goal: a strong, rounded bump.** **How I get there:** this is the Holy Panda idea. A stem with a big tactile leg goes into housings that let the bump come through cleanly. I lube the rails and the spring but never the legs, or the bump goes mushy.
+
+![A Holy Panda switch, with its keycap removed, sitting in a keyboard](../../assets/projects/custom-keyboards/holy-panda.jpg "A Holy Panda, the best-known frankenswitch. Photo: KazlMatas, CC BY-SA 4.0.")
 
 Each time, I build a few test switches, put them in a board, and type on them before committing to a full set of 70 to 90.
 
@@ -80,3 +87,5 @@ Twenty-two boards since December 2022, from tenkeyless down to 60%, plus a custo
 Early on I built boards the way I like them: my favourite sound, my favourite feel. That was the wrong reference. The person paying is the one typing on it every day. Now I start from what the client asked for and treat my own taste as a suggestion.
 
 I also learned that no single part makes the sound. The same switches sound different in a top-mount aluminum case and an O-ring case, so I test switches in the actual board before I finish a build.
+
+<small>Switch photos from Wikimedia Commons, licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/): [disassembled tactile switch](https://commons.wikimedia.org/wiki/File:Cherry_MX_Brown_switch_(disassembled).jpg) by Multicherry, [opened linear switch](https://commons.wikimedia.org/wiki/File:Cherry_MX_black_opened.jpg) by Dmitriy Nosachev, [Holy Panda](https://commons.wikimedia.org/wiki/File:An_Invyr_Holy_Panda_switch_inside_an_Idobao_ID80_keyboard.jpg) by KazlMatas. All other photos and CAD are my own.</small>

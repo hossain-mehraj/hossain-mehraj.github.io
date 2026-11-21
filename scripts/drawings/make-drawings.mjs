@@ -16,7 +16,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..')
 const OUT = path.join(ROOT, 'src/assets/projects/machine-shop');
 mkdirSync(OUT, { recursive: true });
 
-const DRAWN_BY = 'ABID HOSSAIN';
+const DRAWN_BY = 'MEHRAJ HOSSAIN';
 const DATE = ''; // fill in the original drawing date if you want it shown
 
 // ───────────────────────────── dimensions (inches) ─────────────────────────────
