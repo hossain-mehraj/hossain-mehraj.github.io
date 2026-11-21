@@ -104,6 +104,7 @@ p { margin: 0 0 var(--s3); }
 .prose h2 { font-size: 1rem; margin: var(--s7) 0 var(--s3); }
 .prose > h2:first-child { margin-top: 0; }
 .prose h3 { font-size: 0.9375rem; font-weight: 500; color: var(--muted); margin: var(--s6) 0 var(--s2); }
+.prose h4 { font-size: 0.9375rem; font-weight: 600; margin: var(--s5) 0 var(--s2); }
 .prose ul, .prose ol { padding-left: 1.25em; margin: 0 0 var(--s3); }
 .prose li { margin-bottom: var(--s2); }
 .prose li::marker { color: var(--muted); }

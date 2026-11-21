@@ -51,20 +51,43 @@ I've been building keyboards for people since December 2022. Twenty-two so far. 
 
 ### Switches
 
-A switch comes apart into four pieces: a top housing, a bottom housing, a stem, and a spring. A frankenswitch is just a switch put back together from pieces of different switches. The most famous one is the Holy Panda, which is Halo stems dropped into Invyr Panda housings. Nobody sold it, people built it.
+Stock switches rarely land exactly where a client wants, so I take them apart and rebuild them from parts of different switches. This is one I documented start to finish.
 
-![A disassembled tactile MX-style switch: top housing, bottom housing, stem and spring laid out separately](../../assets/projects/custom-keyboards/switch-parts-tactile.jpg "The four parts I mix and match. Photo: Multicherry, CC BY-SA 4.0.")
-![An opened linear MX-style switch with its stem, spring and both housings](../../assets/projects/custom-keyboards/switch-parts-linear.jpg "A linear switch opened up for lubing and filming. Photo: Dmitriy Nosachev, CC BY-SA 4.0.")
+#### Frankenswitch: Zaku × Milky Yellow
 
-Two briefs come up the most:
+**Goal:** a linear that sounds deeper and softer than a stock Zaku, but feels crisper and snappier than a stock Milky Yellow.
 
-**Goal: deep and quiet.** **How I get there:** a softer bottom housing to take the edge off each keypress, a smooth stem so nothing scratches, and a thin film between the housings so they don't rattle. Then a light coat of lube on the stem and housing rails, and a spring heavy enough that the bottom-out isn't harsh.
+Neither switch did both. The Zaku had the feel I wanted and the Milky Yellow had the sound, so I took them both apart and kept the parts that did each job.
 
-**Goal: a strong, rounded bump.** **How I get there:** this is the Holy Panda idea. A stem with a big tactile leg goes into housings that let the bump come through cleanly. I lube the rails and the spring but never the legs, or the bump goes mushy.
+![Two switches on a desk among switch-modding tools: a Zaku with a white stem on the left and a Milky Yellow with a yellow stem on the right](../../assets/projects/custom-keyboards/franken-01-donors.jpg "The two donor switches: Zaku on the left, Milky Yellow on the right.")
 
-![A Holy Panda switch, with its keycap removed, sitting in a keyboard](../../assets/projects/custom-keyboards/holy-panda.jpg "A Holy Panda, the best-known frankenswitch. Photo: KazlMatas, CC BY-SA 4.0.")
+![Both switches fully disassembled in two rows, each row showing bottom housing, top housing, stem and spring](../../assets/projects/custom-keyboards/franken-02-teardown.jpg "Both switches apart: Zaku on top, Milky Yellow below. Left to right: bottom housing, top housing, stem, spring.")
 
-Each time, I build a few test switches, put them in a board, and type on them before committing to a full set of 70 to 90.
+**Housings from the Milky Yellow.** When the stem bottoms out or springs back up, it's the housing that rings, so the housing sets most of the pitch. The Milky Yellow's milky housings are a softer, more damped plastic than the Zaku's white ones. That pulls the sound lower and rounds off the clack, which covers the "deeper" half of the goal.
+
+![Two top housings side by side: a translucent milky housing on the left and a solid white housing on the right](../../assets/projects/custom-keyboards/franken-03-housings.jpg "Housings: Milky Yellow on the left (kept), Zaku on the right.")
+
+**Stem from the Zaku.** The Zaku stem has the longer centre pole. A longer pole hits the bottom housing just before the rest of the stem would, so travel is slightly shorter and the bottom-out is one clean, firm stop instead of a soft landing. That's the "crisper" half. And because it now bottoms out in a Milky Yellow housing, the sound stays low instead of turning clacky.
+
+![Two switch stems side by side: a yellow stem on the left and a white stem with a longer centre pole on the right](../../assets/projects/custom-keyboards/franken-04-stems.jpg "Stems: Milky Yellow on the left, Zaku on the right (kept), with the longer pole.")
+
+**Spring from the Zaku.** The Zaku uses a double-action spring, which has two rates: light for the first part of the press, then stiffer near the bottom. The key starts easy, the extra force slows the stem before it hits bottom so it doesn't slam, and the same stored force pushes the key back up faster. That's where the "snappier" comes from.
+
+![Two springs side by side: a shorter single-rate spring on the left and a longer double-action spring on the right](../../assets/projects/custom-keyboards/franken-05-springs.jpg "Springs: Milky Yellow on the left, Zaku double-action on the right (kept). The tighter coils mark where the rate changes.")
+
+**Film.** Parts from two different switches don't always sit perfectly tight, and a loose top housing wobbles and rattles. That rattle is what makes a switch sound hollow and inconsistent from key to key. A thin film between the two housing halves takes up the gap, so the housing behaves like one solid part.
+
+![Placing a thin clear switch film onto the Milky Yellow bottom housing with tweezers](../../assets/projects/custom-keyboards/franken-06-film.jpg "Placing the film on the Milky Yellow bottom housing.")
+![The Milky Yellow bottom housing on a switch opener with the film seated around its edge](../../assets/projects/custom-keyboards/franken-07-film-seated.jpg "Film seated, ready for the stem and spring.")
+
+**Lube.** A thin coat on the stem's sliding rails and on the spring. It smooths out the travel and stops the spring pinging, without using so much that the key feels slow to come back up.
+
+**Assembly.** The Zaku spring and stem go into the Milky Yellow bottom housing, then the Milky Yellow top closes over them.
+
+![The Zaku stem and spring being lowered into the Milky Yellow bottom housing on a switch opener](../../assets/projects/custom-keyboards/franken-08-stem-spring.jpg "Zaku stem and spring going into the Milky Yellow bottom.")
+![The finished frankenswitch on the opener with the Milky Yellow top housing closed over the Zaku stem](../../assets/projects/custom-keyboards/franken-09-finished.jpg "Milky Yellow top on: the finished switch.")
+
+**Result:** the Milky Yellow's lower, softer sound, with the Zaku's firmer bottom-out and quicker return.
 
 ### Mounting
 
@@ -88,4 +111,3 @@ Early on I built boards the way I like them: my favourite sound, my favourite fe
 
 I also learned that no single part makes the sound. The same switches sound different in a top-mount aluminum case and an O-ring case, so I test switches in the actual board before I finish a build.
 
-<small>Switch photos from Wikimedia Commons, licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/): [disassembled tactile switch](https://commons.wikimedia.org/wiki/File:Cherry_MX_Brown_switch_(disassembled).jpg) by Multicherry, [opened linear switch](https://commons.wikimedia.org/wiki/File:Cherry_MX_black_opened.jpg) by Dmitriy Nosachev, [Holy Panda](https://commons.wikimedia.org/wiki/File:An_Invyr_Holy_Panda_switch_inside_an_Idobao_ID80_keyboard.jpg) by KazlMatas. All other photos and CAD are my own.</small>
