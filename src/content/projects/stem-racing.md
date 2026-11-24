@@ -94,8 +94,8 @@ Four cars across the season, ending with two matched cars for Nationals. Simulat
 
 ![Three-quarter render of the final car from above and behind](../../assets/projects/stem-racing/render-three-quarter.jpg "Final car, rendered.")
 
-![The car on the start line under the timing gate](../../assets/projects/stem-racing/sr-startline.jpg "On the start line at Nationals.")
-![The finished Team Lux race car on a workbench: pale machined foam body, grey 3D-printed wings and wheels, red halo](../../assets/projects/stem-racing/sr-car.jpg "The finished car: CNC-machined foam body, 3D-printed wings, wheels, and halo.")
+![Team Lux's gold race car in the start box beside the start gate, with the F1 in Schools logo on its screen](../../assets/projects/stem-racing/sr-nationals-gate.jpg "In the start box at Nationals.")
+![The gold Team Lux car and an opposing purple car on the track under the start gate](../../assets/projects/stem-racing/sr-nationals-start.jpg "Team Lux (gold, left) on the start gate at Nationals.")
 
 ## What I learned
 

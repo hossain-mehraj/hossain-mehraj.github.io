@@ -46,8 +46,9 @@ Four work streams (Car Development, Enterprise, Branding, Competition), each bro
 
 ![Work breakdown structure: Team Lux project split into Car Development, Enterprise, Branding and Competition, each with three tasks](../../assets/projects/stem-racing/work-breakdown.jpg "Work breakdown structure.")
 
-![Gantt chart with eight phases from research and planning in November to final preparation in April](../../assets/projects/stem-racing/gantt.jpg "Season timeline: four cars across eight phases.")
-![RACI matrix assigning responsible, accountable, consulted and informed roles for each deliverable](../../assets/projects/stem-racing/raci-matrix.png "RACI matrix: one accountable owner per deliverable.")
+![Gantt chart with eight phases from research and planning in November to final preparation in April](../../assets/projects/stem-racing/gantt.jpg "[wide] Season timeline: four cars across eight phases.")
+
+![RACI matrix assigning responsible, accountable, consulted and informed roles for each deliverable](../../assets/projects/stem-racing/raci-matrix.png "[wide] RACI matrix: one accountable owner per deliverable.")
 
 ### Risk register
 
@@ -55,7 +56,7 @@ Nine risks rated by likelihood and impact. The top two, manufacturing delays and
 
 It was tested once: a rules mix-up ruined a regulation foam block with no spare in stock. Our title sponsor, GH Precision, sourced a replacement the same day, and we were cutting again within hours.
 
-![Risk register table of nine risks with ratings from 5 to 8 and preventative measures](../../assets/projects/stem-racing/risk-register.jpg "Risk register.")
+![Risk register table of nine risks with ratings from 5 to 8 and preventative measures](../../assets/projects/stem-racing/risk-register.jpg "[wide] Risk register.")
 
 ### Sponsorship: offering value, not asking for money
 
@@ -65,8 +66,8 @@ It was tested once: a rules mix-up ruined a regulation foam block with no spare 
 
 The result: $4,000 in cash and $7,600 in kind from more than 15 sponsors, plus software and CFD mentorship.
 
-![Bar chart: projected project cost of over 14,000 dollars before in-kind sponsorship and about 2,000 dollars after](../../assets/projects/stem-racing/in-kind-impact.jpg "Projected cost before and after in-kind sponsorship.")
-![Team Lux sponsorship package, website sponsor tiers and Instagram sponsor posts on laptop and phone mockups](../../assets/projects/stem-racing/sponsorship-materials.jpg "Sponsorship package, website tiers, and sponsor posts.")
+![Bar chart: projected project cost of over 14,000 dollars before in-kind sponsorship and about 2,000 dollars after](../../assets/projects/stem-racing/in-kind-impact.jpg "[wide] Projected cost before and after in-kind sponsorship.")
+![Team Lux sponsorship package, website sponsor tiers and Instagram sponsor posts on laptop and phone mockups](../../assets/projects/stem-racing/sponsorship-materials.jpg "[wide] Sponsorship package, website tiers, and sponsor posts.")
 
 ### Brand
 
@@ -79,8 +80,10 @@ The name comes from our school motto, *Lux numquam desit* ("the light will never
 
 At the 2026 National Championships: **1st in Pit Display**, **2nd in Project Management**, **3rd in Brand Identity**, and **4th overall**. Every deliverable was on time. The zero-waste pit display was built from repurposed workshop materials, and the lighthouse at the back is a model I designed and 3D printed.
 
-![Plaque reading 2026 National Championships Best Pit Display](../../assets/projects/stem-racing/sr-plaque.jpg "Best Pit Display, 2026.")
-![Team Lux pit display with design panels and a lighthouse model](../../assets/projects/stem-racing/sr-pit.jpg "The pit display, with the printed lighthouse at back left.")
+![Teams from across Canada seated together on the floor of the Nationals venue under an inflatable dome](../../assets/projects/stem-racing/nationals-group.webp "The finalist teams together at the 2026 National Championships.")
+
+![Plaque reading 2026 National Championships Best Pit Display](../../assets/projects/stem-racing/sr-plaque.jpg "[wide] Best Pit Display, 2026.")
+![Team Lux pit display with design panels and a lighthouse model](../../assets/projects/stem-racing/sr-pit.jpg "[wide] The pit display, with the printed lighthouse at back left.")
 
 ## What I learned
 
