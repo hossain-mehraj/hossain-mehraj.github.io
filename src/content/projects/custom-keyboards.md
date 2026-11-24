@@ -8,7 +8,7 @@ tags: [CAD, Business, Materials]
 role: Founder and builder
 dates: Dec 2022 – present
 featured: true
-order: 2
+order: 3
 heroImage: ../../assets/projects/custom-keyboards/kb-75.jpg
 heroAlt: Black 75 percent keyboard with a rotary knob and teal and navy keycaps
 tools: [Onshape, CNC machining via PCBWay, Soldering, Switch modding]
