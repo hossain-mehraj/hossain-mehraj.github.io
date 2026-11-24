@@ -57,6 +57,11 @@ We built one deliberately simple car and studied it before designing the real on
 
 ### Iterations: first race car to final car
 
+The first race car, the prototype, before any of the CFD-driven changes below:
+
+![The prototype Team Lux race car on a workbench: pale machined foam body, grey 3D-printed wings and wheels, red halo](../../assets/projects/stem-racing/sr-car.jpg "Prototype: the first race car, with a CNC-machined foam body and 3D-printed wings, wheels, and halo.")
+![The prototype car on the start line under the timing gate](../../assets/projects/stem-racing/sr-startline.jpg "Test session: the prototype on the start line.")
+
 ![CAD render of the first front wing with a high-downforce profile](../../assets/projects/stem-racing/front-wing-v1.jpg "Front wing, first race.")
 ![CAD render of the final front wing with refined endplates](../../assets/projects/stem-racing/front-wing-v3.jpg "Front wing, Nationals.")
 
