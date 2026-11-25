@@ -26,7 +26,7 @@ links: {}
 
 STEM Racing (formerly F1 in Schools) asks student teams to design, build, and race a CO₂-powered car inside a tight rulebook. Team Lux formed two weeks before Regionals, qualified, and finished 4th at Nationals, about 10 points out of 1,000 short of the international final. I led the car's design and manufacturing.
 
-The business side (sponsorship, scheduling, and the enterprise awards) has its own page: [STEM Racing: Enterprise](/projects/stem-racing-enterprise/).
+The business side (sponsorship, scheduling, and the enterprise awards) has its own page: [STEM Racing: Business Development](/projects/stem-racing-enterprise/).
 
 ## The goal
 
