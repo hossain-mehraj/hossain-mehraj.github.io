@@ -4,4 +4,3 @@ dist/
 .DS_Store
 # Local-only: images held back for privacy, and the old single-page site for reference
 held-back/
-.claude/
