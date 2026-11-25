@@ -1,5 +1,5 @@
 ---
-title: "STEM Racing: Enterprise"
+title: "STEM Racing: Business Development"
 slug: stem-racing-enterprise
 summary: "Funding, scheduling, and branding Team Lux: $11,600 raised, 1st Pit Display."
 icon: briefcase
